@@ -44,7 +44,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/Elijah_M_Flomo.pdf"
+              href="/ELIJAH_RESUME.pdf"
               download
               className="
                 px-7 py-3

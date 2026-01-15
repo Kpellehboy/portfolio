@@ -94,7 +94,7 @@ export default function Resume() {
         {/* Download Button */}
         <div className="mt-16 flex justify-center">
           <a
-            href="/Elijah_M_Flomo.pdf"
+            href="/ELIJAH_RESUME.pdf"
             download
             className="rounded bg-gray-900 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition"
           >
