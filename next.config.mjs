@@ -1,6 +1,7 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  allowedDevOrigins: ['10.2.0.2', '*.local', '*.local-origin.dev']
 };
 
 export default nextConfig;

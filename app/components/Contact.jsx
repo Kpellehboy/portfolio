@@ -18,7 +18,7 @@ export default function Contact() {
         {
           name: e.target.name.value,
           email: e.target.email.value,
-          subject: e.target.subject.value,   // ✅ fixed (was "title")
+          subject: e.target.subject.value,   // 👈 key must match your EmailJS template
           message: e.target.message.value,
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
