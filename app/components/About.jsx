@@ -34,7 +34,7 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              I am a Python Backend Developer specializing in FastAPI and PostgreSQL, with experience building scalable REST APIs and backend systems. I have developed real-world projects including an e-commerce backend, student management system, and a financial API.
+              I am a Backend Developer specializing in FastAPI and PostgreSQL, with experience building scalable REST APIs and backend systems. I have developed real-world projects including an e-commerce backend, student management system, and a financial API.
             </p>
 
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
