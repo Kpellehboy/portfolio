@@ -8,53 +8,36 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center bg-white dark:bg-gray-950"
     >
-      <div className="mx-auto max-w-7xl w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div className="mx-auto max-w-7xl w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT CONTENT */}
         <div>
-          <h3 className="text-5xl md:text-6xl font-extrabold leading-[1.1] text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 dark:text-white">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-sky-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
               Elijah
             </span>
-            ,<br />
-            a Computer Science Student
-          </h3>
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mt-2">
+           a Python Backend Developer
+          </h2>
 
-          <p className="mt-8 max-w-xl text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            Passionate about developing intelligent systems, with a strong interest
-            in backend development and machine learning, and committed to continuous
-            learning within the tech ecosystem.
+          <p className="mt-6 text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
+            Specializing in Python, FastAPI, and PostgreSQL, I develop scalable REST APIs and backend systems for real-world applications, with a focus on performance and clean architecture.
           </p>
 
-          <div className="mt-12 flex gap-4">
+          <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="
-                bg-gray-900 text-white
-                px-7 py-3
-                text-sm font-semibold
-                rounded-lg
-                shadow-sm
-                hover:bg-gray-800 hover:shadow-md
-                transition
-              "
+              className="px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-md shadow hover:bg-gray-800 hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
             >
               View Projects
             </a>
 
             <a
-              href="/ELIJAH_RESUME.pdf"
+              href="/Elijah-M-Flomo_Resume.pdf"
               download
-              className="
-                px-7 py-3
-                text-sm font-semibold
-                rounded-lg
-                border border-gray-900 dark:border-gray-700
-                text-gray-900 dark:text-white
-                hover:bg-gray-100 dark:hover:bg-gray-800
-                transition
-              "
+              className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
             >
               Download Resume
             </a>
@@ -69,13 +52,13 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 to-sky-400 blur-xl opacity-30" />
 
             {/* Avatar */}
-            <div className="relative w-72 h-72 md:w-[380px] md:h-[380px] rounded-full overflow-hidden shadow-2xl animate-float">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
               <Image
                 src="/homepic.jpg"
                 alt="Elijah M. Flomo"
                 fill
                 priority
-                className="object-cover object-top animate-fadeIn"
+                className="object-cover object-top"
               />
             </div>
 

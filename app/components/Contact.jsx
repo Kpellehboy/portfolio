@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { FaEnvelope, FaPhoneAlt, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaPaperPlane } from "react-icons/fa";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -13,15 +13,15 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_g0575e7",        // 🔴 MY SERVICE ID
-        "template_f6rv9ja",       // 🔴 MY TEMPLATE ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
           name: e.target.name.value,
           email: e.target.email.value,
-          title: e.target.subject.value,
+          subject: e.target.subject.value,   // ✅ fixed (was "title")
           message: e.target.message.value,
         },
-        "GjB9PWWj0U5PrVEly"         // 🔴 My PUBLIC KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         alert("Message sent successfully!");
@@ -36,97 +36,105 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-6 py-24">
+    <section id="contact" className="bg-slate-50 dark:bg-gray-900 py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+          Contact Me
+        </h2>
 
-      {/* Title */}
-      <h2 className="text-center text-3xl font-extrabold mb-16">
-        Contact Me
-      </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-
-        {/* Contact Form */}
-        <form onSubmit={sendEmail} className="space-y-5">
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            className="w-full rounded border px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            className="w-full rounded border px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
-          />
-
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            required
-            className="w-full rounded border px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
-          />
-
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-            className="w-full rounded border px-4 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-gray-900"
-          />
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full rounded bg-gray-900 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition"
-          >
-            {loading ? "Sending..." : "Submit"}
-          </button>
-        </form>
-
-        {/* Get in Touch */}
-        <div className="space-y-6">
-          <h3 className="text-lg font-semibold">Get in Touch</h3>
-
-          <div className="flex items-center gap-4">
-            <FaEnvelope className="text-xl" />
-            <a
-              href="mailto:elijahmflomo@gmail.com"
-              className="text-sm text-gray-700 hover:underline"
-            >
-              elijahmflomo@gmail.com
-            </a>
+          {/* Contact Form */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+              Send a Message
+            </h3>
+            <form onSubmit={sendEmail} className="space-y-5">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-blue-600 to-sky-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-sky-600 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {loading ? "Sending..." : "Send Message"} <FaPaperPlane className="text-sm" />
+              </button>
+            </form>
           </div>
 
-          <div className="flex items-center gap-4">
-            <FaPhoneAlt className="text-xl" />
-            <a
-              href="tel:+919814745828"
-              className="text-sm text-gray-700 hover:underline"
-            >
-              +91 98147 45828
-            </a>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <FaLinkedin className="text-xl" />
-            <a
-              href="https://www.linkedin.com/in/elijah-m-flomo-a7a253267"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-700 hover:underline"
-            >
-              linkedin.com/in/elijah-m-flomo
-            </a>
+          {/* Contact Info */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+              Get in Touch
+            </h3>
+            <div className="space-y-6">
+              <ContactInfo
+                icon={<FaEnvelope />}
+                label="Email"
+                value="elijahmflomo@gmail.com"
+                href="mailto:elijahmflomo@gmail.com"
+              />
+              <ContactInfo
+                icon={<FaPhoneAlt />}
+                label="Phone"
+                value="+91 98147 45828"
+                href="tel:+919814745828"
+              />
+              <ContactInfo
+                icon={<FaLinkedin />}
+                label="LinkedIn"
+                value="linkedin.com/in/elijah-m-flomo"
+                href="https://www.linkedin.com/in/elijah-m-flomo-a7a253267"
+              />
+            </div>
           </div>
         </div>
-
       </div>
     </section>
+  );
+}
+
+function ContactInfo({ icon, label, value, href }) {
+  return (
+    <div className="flex items-start gap-4">
+      <div className="text-2xl text-blue-600 dark:text-blue-400 mt-1">{icon}</div>
+      <div>
+        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</p>
+        <a
+          href={href}
+          target={href.startsWith("http") ? "_blank" : undefined}
+          rel="noopener noreferrer"
+          className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition font-medium break-all"
+        >
+          {value}
+        </a>
+      </div>
+    </div>
   );
 }
