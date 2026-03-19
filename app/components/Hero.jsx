@@ -19,7 +19,7 @@ export default function Hero() {
             </span>
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mt-2">
-           a Python Backend Developer
+           a Backend Developer
           </h2>
 
           <p className="mt-6 text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
