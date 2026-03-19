@@ -9,8 +9,9 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
+  // Initialize EmailJS with your Public Key
   useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+    emailjs.init("GjB9PWWj0U5PrVEly");
   }, []);
 
   const sendEmail = async (e) => {
@@ -21,14 +22,15 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        "service_04fw6qu",               // Service ID
+        "template_2xyv3bh",               // Template ID
         {
           name: e.target.name.value,
           email: e.target.email.value,
           subject: e.target.subject.value,
           message: e.target.message.value,
         }
+        // Public Key is already set in init, so not needed here
       );
 
       setSuccess(true);
