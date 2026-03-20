@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Cloud } from "lucide-react";
 
 export default function Hero() {
   const [logoError, setLogoError] = useState(false);
@@ -22,7 +23,13 @@ export default function Hero() {
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
               <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-                Menuo Tech Solutions
+                Menuo
+              </span>{" "}
+              <span className="relative inline-block bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-blue-500 after:bottom-0 after:left-0">
+                Tech
+              </span>{" "}
+              <span className="text-gray-900 dark:text-white">
+                Solutions
               </span>
             </h1>
 
@@ -78,9 +85,9 @@ export default function Hero() {
                 )}
               </div>
 
-              {/* Optional floating element */}
+              {/* Floating cloud icon */}
               <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce">
-                <span className="text-2xl">🚀</span>
+                <Cloud className="w-10 h-10 text-blue-500" />
               </div>
             </div>
           </div>

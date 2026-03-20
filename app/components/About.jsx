@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle, Zap, Rocket, Cloud, Brain } from "lucide-react";
+import { CheckCircle, Brain, Rocket, Cloud } from "lucide-react";
 
 export default function About() {
   return (
@@ -51,12 +51,12 @@ export default function About() {
               </p>
             </div>
 
-            {/* HIGHLIGHTS – Modern card-style icons */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <FeatureItem icon={<CheckCircle />} text="Backend API Development (FastAPI, Node.js)" />
-              <FeatureItem icon={<Brain />} text="AI Chatbot & Automation Solutions" />
-              <FeatureItem icon={<Rocket />} text="Startup Website & MVP Development" />
-              <FeatureItem icon={<Cloud />} text="Cloud Deployment & Optimization" />
+            {/* HIGHLIGHTS – simple inline list, no boxes */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <FeatureItem icon={<CheckCircle className="w-4 h-4" />} text="Backend API Development (FastAPI, Node.js)" />
+              <FeatureItem icon={<Brain className="w-4 h-4" />} text="AI Chatbot & Automation Solutions" />
+              <FeatureItem icon={<Rocket className="w-4 h-4" />} text="Startup Website & MVP Development" />
+              <FeatureItem icon={<Cloud className="w-4 h-4" />} text="Cloud Deployment & Optimization" />
             </div>
           </div>
 
@@ -68,11 +68,9 @@ export default function About() {
 
 function FeatureItem({ icon, text }) {
   return (
-    <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition">
-      <div className="text-blue-600 dark:text-blue-400 flex-shrink-0">
-        {icon}
-      </div>
-      <span className="text-sm text-gray-700 dark:text-gray-300">{text}</span>
+    <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+      <span className="text-blue-600 dark:text-blue-400">{icon}</span>
+      <span>{text}</span>
     </div>
   );
 }
