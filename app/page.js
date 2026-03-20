@@ -1,30 +1,21 @@
-"use client";
-
-import { useEffect } from "react";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
+import Services from "./components/Services";
 import Projects from "./components/Projects";
-import Resume from "./components/Resume";
+import TechStacks from "./components/TechStacks";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
+      <Services />
       <Projects />
-      <Resume />
+      <TechStacks />
+      <About />
       <Contact />
       <Footer />
     </>

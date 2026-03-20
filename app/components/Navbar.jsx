@@ -1,128 +1,72 @@
 "use client";
 
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const navItems = [
+  "home",
+  "services",
+  "projects",
+  "tech",
+  "about",
+  "contact",
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
 
-        {/* Logo */}
-        <span className="text-lg font-semibold text-red-600">
-          Elijah M. Flomo
-        </span>
+        {/* LOGO */}
+        <button onClick={() => scrollTo("home")} className="text-xl font-bold">
+          <span className="bg-gradient-to-r from-blue-500 to-sky-400 bg-clip-text text-transparent">
+            Menuo Tech
+          </span>{" "}
+          <span className="text-white">Solutions</span>
+        </button>
 
-        {/* Desktop Menu */}
+        {/* DESKTOP */}
         <nav className="hidden md:flex gap-6 text-sm font-medium">
-          {/* HOME (active / parent) */}
-          <a
-            href="#home"
-            className="text-red-600 font-semibold"
-          >
-            Home
-          </a>
-
-          <a
-            href="#about"
-            className="hover:text-blue-600 transition"
-          >
-            About
-          </a>
-
-          <a
-            href="#skills"
-            className="hover:text-blue-600 transition"
-          >
-            Skills
-          </a>
-
-          <a
-            href="#projects"
-            className="hover:text-blue-600 transition"
-          >
-            Projects
-          </a>
-
-          <a
-            href="#resume"
-            className="hover:text-blue-600 transition"
-          >
-            Resume
-          </a>
-
-          <a
-            href="#contact"
-            className="hover:text-blue-600 transition"
-          >
-            Contact
-          </a>
+          {navItems.map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollTo(item)}
+              className="capitalize text-gray-300 hover:text-blue-400 transition"
+            >
+              {item}
+            </button>
+          ))}
         </nav>
 
-        {/* Mobile Button */}
+        {/* MOBILE TOGGLE */}
         <button
-          className="md:hidden text-xl"
           onClick={() => setOpen(!open)}
+          className="md:hidden text-white"
           aria-label="Toggle menu"
         >
-          ☰
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden border-t bg-white shadow-sm">
-          <nav className="flex flex-col px-6 py-4 space-y-4 text-sm font-medium">
-
-            <a
-              href="#home"
-              className="text-red-600 font-semibold"
-              onClick={() => setOpen(false)}
+        <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800 px-6 pb-4 pt-2 space-y-3">
+          {navItems.map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollTo(item)}
+              className="block w-full text-left capitalize text-gray-300 hover:text-blue-400 transition py-2"
             >
-              Home
-            </a>
-
-            <a
-              href="#about"
-              className="hover:text-blue-600 transition"
-              onClick={() => setOpen(false)}
-            >
-              About
-            </a>
-
-            <a
-              href="#skills"
-              className="hover:text-blue-600 transition"
-              onClick={() => setOpen(false)}
-            >
-              Skills
-            </a>
-
-            <a
-              href="#projects"
-              className="hover:text-blue-600 transition"
-              onClick={() => setOpen(false)}
-            >
-              Projects
-            </a>
-
-            <a
-              href="#resume"
-              className="hover:text-blue-600 transition"
-              onClick={() => setOpen(false)}
-            >
-              Resume
-            </a>
-
-            <a
-              href="#contact"
-              className="hover:text-blue-600 transition"
-              onClick={() => setOpen(false)}
-            >
-              Contact
-            </a>
-          </nav>
+              {item}
+            </button>
+          ))}
         </div>
       )}
     </header>
