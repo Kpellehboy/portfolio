@@ -16,7 +16,7 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // Initialize EmailJS (UNCHANGED ✅)
+  // ✅ EmailJS INIT (UNCHANGED)
   useEffect(() => {
     emailjs.init("GjB9PWWj0U5PrVEly");
   }, []);
@@ -54,13 +54,13 @@ export default function Contact() {
     <section id="contact" className="bg-slate-50 dark:bg-gray-900 py-24">
       <div className="mx-auto max-w-7xl px-6">
 
-        {/* SECTION HEADER */}
+        {/* HEADER */}
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-            Let’s Build Your Project
+            Get In Touch
           </h2>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Have a startup idea or need a scalable backend solution? Let’s discuss how we can bring your project to life.
+            Interested in working together or have a question? Feel free to reach out — I’m always open to discussing projects and opportunities.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function Contact() {
           {/* FORM */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <FaCommentAlt className="text-blue-600" /> Start a Conversation
+              <FaCommentAlt className="text-blue-600" /> Send a Message
             </h3>
 
             <form onSubmit={sendEmail} className="space-y-5">
@@ -102,7 +102,7 @@ export default function Contact() {
               <input
                 type="text"
                 name="subject"
-                placeholder="Project Type (e.g. Website, API, AI Chatbot)"
+                placeholder="Subject (e.g. Collaboration, Job Opportunity)"
                 required
                 className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -110,7 +110,7 @@ export default function Contact() {
               {/* MESSAGE */}
               <textarea
                 name="message"
-                placeholder="Tell me about your project..."
+                placeholder="Your message..."
                 rows="5"
                 required
                 className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm text-gray-900 dark:text-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -122,7 +122,7 @@ export default function Contact() {
                 disabled={loading}
                 className="w-full bg-gradient-to-r from-blue-600 to-sky-500 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-sky-600 transition disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                {loading ? "Sending..." : "Send Message"}{" "}
+                {loading ? "Sending..." : "Send Message"}
                 <FaPaperPlane className="text-sm" />
               </button>
 

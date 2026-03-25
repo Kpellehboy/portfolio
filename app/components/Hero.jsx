@@ -1,105 +1,185 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { Cloud } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Download, Github, Linkedin, Mail, X } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function Hero() {
-  const [logoError, setLogoError] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    emailjs.init("GjB9PWWj0U5PrVEly");
+  }, []);
+
+  const sendCVRequest = async (e) => {
+    e.preventDefault();
+
+    await emailjs.send("service_04fw6qu", "template_2xyv3bh", {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      subject: "CV Request",
+      message: "User requested your CV",
+    });
+
+    alert("Request sent successfully ✅");
+    setShowModal(false);
+    e.target.reset();
+  };
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-sky-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950"
-    >
-      {/* Decorative blobs */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-300/20 to-sky-300/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-300/10 to-pink-300/10 rounded-full blur-3xl animate-pulse delay-1000" />
+    <>
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#020617]"
+      >
+        {/* BACKGROUND EFFECT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
+        <div className="absolute inset-0 bg-grid-white/5 opacity-20" />
 
-      <div className="container mx-auto px-6 py-12 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          
-          {/* LEFT COLUMN – TEXT */}
+        <div className="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center">
+
+          {/* LEFT */}
           <div className="space-y-6 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-                Menuo
-              </span>{" "}
-              <span className="relative inline-block bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-blue-500 after:bottom-0 after:left-0">
-                Tech
-              </span>{" "}
-              <span className="text-gray-900 dark:text-white">
-                Solutions
-              </span>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight animate-fade-in">
+              Elijah M. Flomo
             </h1>
 
-            <h2 className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300">
-              Cloud & AI Backend Solutions for Startups
+            <h2 className="text-lg md:text-xl text-gray-300 animate-fade-in delay-100">
+              Full-Stack Developer (Backend-Focused) | AI & Cloud Engineering Enthusiast
             </h2>
 
-            <p className="text-gray-600 dark:text-gray-400 max-w-lg mx-auto md:mx-0">
-              We help startups build scalable APIs, AI-powered systems, and modern cloud applications using Python, Node.js, and Next.js.
+            <p className="text-gray-400 max-w-lg animate-fade-in delay-200">
+              I design and build scalable backend systems, REST APIs, and AI-powered applications.
+              Focused on creating reliable, cloud-ready solutions using Python, Node.js, and modern technologies.
             </p>
 
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Founded by Elijah M. Flomo
-            </p>
+            {/* TAGS */}
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              {["APIs", "AI Systems", "Cloud Apps", "Backend"].map((item, i) => (
+                <span
+                  key={item}
+                  className="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white transition animate-fade-in"
+                  style={{ animationDelay: `${i * 120}ms` }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
 
-            <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+            {/* BUTTONS */}
+            <div className="flex gap-4 justify-center md:justify-start flex-wrap pt-2">
               <a
-                href="#services"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white font-medium shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                href="#projects"
+                className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition shadow-lg hover:shadow-blue-500/30"
               >
-                View Services
+                View Projects
               </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center px-6 py-3 rounded-full border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+
+              <button
+                onClick={() => setShowModal(true)}
+                className="px-6 py-3 bg-gray-800 text-white rounded-full flex items-center gap-2 hover:bg-gray-700 transition"
               >
-                Contact Us
+                <Download size={16} /> Resume
+              </button>
+            </div>
+
+            {/* SOCIAL */}
+            <div className="flex gap-4 justify-center md:justify-start pt-4">
+              <a
+                href="https://github.com/Kpellehboy"
+                target="_blank"
+                className="p-3 rounded-full bg-gray-800 text-gray-300 hover:bg-black hover:text-white transition hover:scale-110"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/elijah-m-flomo-a7a253267/"
+                target="_blank"
+                className="p-3 rounded-full bg-blue-900/30 text-blue-400 hover:bg-blue-600 hover:text-white transition hover:scale-110"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+
+              <a
+                href="mailto:elijahmflomo@gmail.com"
+                className="p-3 rounded-full bg-red-900/30 text-red-400 hover:bg-red-600 hover:text-white transition hover:scale-110"
+              >
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* RIGHT COLUMN – IMAGE */}
+          {/* RIGHT IMAGE */}
           <div className="flex justify-center">
             <div className="relative group">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-sky-400 blur-2xl opacity-30 rounded-full animate-pulse" />
 
-              {/* Image container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl transform group-hover:scale-105 transition duration-500">
-                {!logoError ? (
+              {/* GLOW */}
+              <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl opacity-50 group-hover:opacity-80 transition" />
+
+              {/* BORDER */}
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full p-[5px] bg-gradient-to-r from-blue-500 to-sky-400 shadow-2xl">
+
+                {/* IMAGE */}
+                <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
-                    src="/logo.png"
-                    alt="Menuo Tech Solutions"
+                    src="/hero.jpeg"
+                    alt="Elijah"
                     fill
+                    className="object-cover object-center"
                     priority
-                    className="object-cover"
-                    onError={() => setLogoError(true)}
                   />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-sky-100 dark:from-gray-800 dark:to-gray-900 text-4xl font-bold text-blue-600">
-                    MTS
-                  </div>
-                )}
+                </div>
               </div>
 
-              {/* Floating cloud icon */}
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce">
-                <Cloud className="w-10 h-10 text-blue-500" />
-              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Optional scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7m14-6l-7 7-7-7" />
-        </svg>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {/* MODAL */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+
+          <div className="bg-gray-900 text-white p-8 rounded-2xl w-[90%] max-w-md relative animate-scale-in border border-gray-700">
+
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4"
+            >
+              <X />
+            </button>
+
+            <h3 className="text-xl font-semibold mb-4">
+              Request My CV
+            </h3>
+
+            <form onSubmit={sendCVRequest} className="space-y-4">
+              <input
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700"
+              />
+
+              <input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                required
+                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700"
+              />
+
+              <button className="w-full bg-blue-600 py-3 rounded-lg hover:bg-blue-700 transition">
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
