@@ -16,7 +16,7 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // ✅ EmailJS INIT (UNCHANGED)
+  // EmailJS INIT (UNCHANGED)
   useEffect(() => {
     emailjs.init("GjB9PWWj0U5PrVEly");
   }, []);
@@ -44,7 +44,7 @@ export default function Contact() {
       setTimeout(() => setSuccess(false), 3000);
     } catch (error) {
       console.error("EmailJS ERROR:", error);
-      setErrorMsg("❌ Failed to send message. Please try again.");
+      setErrorMsg("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -60,7 +60,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Interested in working together or have a question? Feel free to reach out — I’m always open to discussing projects and opportunities.
+            Interested in working together or have a question? Feel free to reach out, I’m always open to discussing projects and opportunities.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ export default function Contact() {
               {/* FEEDBACK */}
               {success && (
                 <p className="text-green-600 dark:text-green-400 text-sm mt-2">
-                  ✅ Message sent successfully!
+                   Message sent successfully!
                 </p>
               )}
 

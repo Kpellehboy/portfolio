@@ -32,8 +32,6 @@ const skillCategories = [
     skills: [
       { name: "Python", icon: <SiPython /> },
       { name: "JavaScript", icon: <FaJs /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "Node.js", icon: <FaNode /> },
     ],
     gradient: "from-blue-500 to-cyan-400",
   },
@@ -44,6 +42,7 @@ const skillCategories = [
       { name: "Flask", icon: <SiFlask /> },
       { name: "REST APIs", icon: <FaRocket /> },
       { name: "Express.js", icon: <SiExpress /> },
+      { name: "Node.js", icon: <FaNode /> },
     ],
     gradient: "from-indigo-500 to-blue-500",
   },
@@ -53,12 +52,17 @@ const skillCategories = [
       { name: "MySQL", icon: <SiMysql /> },
       { name: "PostgreSQL", icon: <FaDatabase /> },
       { name: "SQLAlchemy", icon: <SiSqlalchemy /> },
+      { name: "MongoDB", icon: <FaDatabase /> },
+      { name: "SQLite", icon: <FaDatabase /> },
+      
+      
     ],
     gradient: "from-purple-500 to-pink-500",
   },
   {
     title: "AI & Data",
     skills: [
+      {name: "Generative AI", icon: <FaRocket />},
       { name: "Machine Learning", icon: <FaChartLine /> },
       { name: "Scikit-learn", icon: <SiScikitlearn /> },
       { name: "NumPy", icon: <SiNumpy /> },
@@ -67,12 +71,23 @@ const skillCategories = [
     gradient: "from-emerald-500 to-teal-400",
   },
   {
+    title: "Frontend",
+    skills: [
+      { name: "Next.js", icon: <SiVercel /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Tailwind CSS", icon: <SiVercel /> },
+      { name: "HTML5", icon: <SiVercel /> },
+    ],
+    gradient: "from-cyan-500 to-blue-500",
+  },
+  {
     title: "Cloud & Tools",
     skills: [
       { name: "AWS", icon: <FaAws /> },
       { name: "Git", icon: <FaGitAlt /> },
       { name: "GitHub", icon: <FaGithub /> },
       { name: "Vercel", icon: <SiVercel /> },
+      { name: "Postman", icon: <FaGithub /> },
     ],
     gradient: "from-orange-500 to-amber-500",
   },
@@ -93,7 +108,7 @@ export default function TechStacks() {
         </h2>
 
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">
-          Tools I use to build scalable backend systems and cloud applications.
+          Tools I use to build scalable backend systems, web applications, and cloud applications.
         </p>
       </div>
 

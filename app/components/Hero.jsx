@@ -22,7 +22,7 @@ export default function Hero() {
       message: "User requested your CV",
     });
 
-    alert("Request sent successfully ✅");
+    alert("Request sent successfully");
     setShowModal(false);
     e.target.reset();
   };
@@ -174,7 +174,7 @@ export default function Hero() {
               />
 
               <button className="w-full bg-blue-600 py-3 rounded-lg hover:bg-blue-700 transition">
-                Send Request
+                Send Requests
               </button>
             </form>
           </div>

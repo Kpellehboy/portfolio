@@ -12,19 +12,17 @@ import {
 } from "lucide-react";
 
 const projects = [
-  // 🤖 AI PROJECTS
-  
   {
     title: "AI-Commerce Assistant API",
     category: "AI & Backend",
     description:
-      "AI-powered API for assisting users in e-commerce platforms with recommendations and queries.",
+      "A full-stack AI-powered e-commerce backend that allows users to interact with a product database using natural language commands.",
     tech: ["Node.js", "Express", "AI API"],
-    result: "Enhanced user interaction with intelligent product suggestions.",
+    result: "Enhanced user engagement by enabling intelligent, conversational product searches and streamlined data interaction..",
     icon: ShoppingCart,
     hoverGradient: "from-indigo-500 to-blue-500",
-    github: "https://github.com/your-username/AI-Commerce-Assistant-API",
-    live: "#",
+    github: "https://github.com/Kpellehboy/AI-Commerce-Assistant-API.git",
+    live: "https://drive.google.com/file/d/1wJsAl3yLAOa84v0XgrLH48BFdqaQbk03/view?usp=sharing",
     featured: true,
   },
   {
@@ -36,37 +34,46 @@ const projects = [
     result: "Achieved fast and accurate object detection in real-time scenarios.",
     icon: Bot,
     hoverGradient: "from-blue-500 to-cyan-400",
-    github: "https://github.com/your-username/Real-Time-Object-Detection-using-YOLOv8",
-    live: "#",
+    github: "https://github.com/Kpellehboy/Real-Time-Object-Detection-using-YOLOv8.git",
+    featured: true,
+  },
+  {
+    title: "Productivity Pulse",
+    category: "Full-Stack Development",
+    description:
+      "A modern productivity tracking application that enables users to monitor daily activities.",
+    tech: ["Next.js 14", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    result:
+      "Improved productivity management by providing real-time tracking, structured insights, and secure user authentication with scalable backend services.",
+    icon: Database,
+    hoverGradient: "from-rose-500 to-pink-500",
+    github: "https://github.com/Kpellehboy/productivity-pulse.git",
+    live: "https://drive.google.com/file/d/1R_uRdEucPMZ4ovPjN7lfjkp2KBJEtY_u/view?usp=sharing",
     featured: true,
   },
 
-  // 🧠 ML PROJECT
   {
     title: "Student Admission Predictor",
     category: "Machine Learning",
     description:
-      "Machine learning model using Random Forest to predict student admission chances.",
+      "This project implements an Ensemble Learning model, the Random Forest Regressor, to predict the number of students accepted for admission based on historical entrance data.",
     tech: ["Python", "Scikit-learn", "Pandas"],
     result: "Achieved high prediction accuracy for admission forecasting.",
     icon: Users,
     hoverGradient: "from-purple-500 to-pink-500",
-    github: "https://github.com/your-username/Student-Admission-Predictor-MachineLearning",
-    live: "#",
+    github: "https://github.com/Kpellehboy/Student-Admission-Predictor-MachineLearning.git"
   },
 
-  // ⚙️ BACKEND PROJECTS
   {
     title: "TaskFlow API",
     category: "Backend Engineering",
     description:
       "REST API for task management with CRUD operations and structured backend logic.",
-    tech: ["Python", "FastAPI", "MongoDB"],
+    tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy"],
     result: "Efficient task handling system with scalable API design.",
     icon: Server,
     hoverGradient: "from-emerald-500 to-teal-400",
-    github: "https://github.com/your-username/TaskFlowApp_API",
-    live: "#",
+    github: "https://github.com/Kpellehboy/TaskFlowApp_API.git"
   },
   {
     title: "Currency Exchange API",
@@ -78,20 +85,8 @@ const projects = [
     icon: Cloud,
     hoverGradient: "from-orange-500 to-red-500",
     github: "https://github.com/your-username/Country-Currency-Exchange-API",
-    live: "#",
-  },
-  {
-    title: "String Analyzer Service",
-    category: "Backend Engineering",
-    description:
-      "Service for analyzing strings including character count, patterns, and transformations.",
-    tech: ["Python"],
-    result: "Efficient string processing with optimized logic.",
-    icon: Database,
-    hoverGradient: "from-rose-500 to-pink-500",
-    github: "https://github.com/your-username/String_Analyzer_Service",
-    live: "#",
-  },
+    live: "https://backendwizardsstage0-production.up.railway.app/",
+  }
 ];
 
 export default function Projects() {
@@ -113,7 +108,7 @@ export default function Projects() {
           </h2>
 
           <p className="mt-6 text-gray-600 dark:text-gray-400 text-lg">
-            I build scalable backend systems, AI-powered applications, and
+            I build scalable backend systems, web applications, and
             cloud-ready solutions focused on real-world impact.
           </p>
         </div>
@@ -203,12 +198,12 @@ export default function Projects() {
 
         {/* CTA */}
         <div className="mt-20 text-center">
-        <a
-         href="#contact"
-         className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
-        >
-        Let’s Work Together
-         </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
+          >
+            Let’s Work Together
+          </a>
         </div>
       </div>
     </section>
