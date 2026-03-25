@@ -43,11 +43,11 @@ export default function Hero() {
           <div className="space-y-6 text-center md:text-left">
 
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight animate-fade-in">
-              Elijah M. Flomo
+              I'M Elijah,
             </h1>
 
             <h2 className="text-lg md:text-xl text-gray-300 animate-fade-in delay-100">
-              Full-Stack Developer (Backend-Focused) | AI & Cloud Engineering Enthusiast
+             A Full-Stack Developer (Backend-Focused) | AI & Cloud Engineering Enthusiast
             </h2>
 
             <p className="text-gray-400 max-w-lg animate-fade-in delay-200">
