@@ -1,95 +1,31 @@
 "use client";
 
+import projects from "../../data/projects";
+
 import {
   Bot,
   Server,
   Cloud,
-  ArrowRight,
-  ShoppingCart,
-  Users,
   Database,
+  Shield,
+  ArrowRight,
   Zap,
+  Github,
 } from "lucide-react";
 
-const projects = [
-  {
-    title: "AI-Commerce Assistant API",
-    category: "AI & Backend",
-    description:
-      "A full-stack AI-powered e-commerce backend that allows users to interact with a product database using natural language commands.",
-    tech: ["Node.js", "Express", "AI API"],
-    result: "Enhanced user engagement by enabling intelligent, conversational product searches and streamlined data interaction..",
-    icon: ShoppingCart,
-    hoverGradient: "from-indigo-500 to-blue-500",
-    github: "https://github.com/Kpellehboy/AI-Commerce-Assistant-API.git",
-    live: "https://drive.google.com/file/d/1wJsAl3yLAOa84v0XgrLH48BFdqaQbk03/view?usp=sharing",
-    featured: true,
-  },
-  {
-    title: "Real-Time Object Detection (YOLOv8)",
-    category: "AI & Computer Vision",
-    description:
-      "Real-time object detection system using YOLOv8 for detecting and tracking objects in live video streams.",
-    tech: ["Python", "YOLOv8", "OpenCV"],
-    result: "Achieved fast and accurate object detection in real-time scenarios.",
-    icon: Bot,
-    hoverGradient: "from-blue-500 to-cyan-400",
-    github: "https://github.com/Kpellehboy/Real-Time-Object-Detection-using-YOLOv8.git",
-    featured: true,
-  },
-  {
-    title: "Productivity Pulse",
-    category: "Full-Stack Development",
-    description:
-      "A modern productivity tracking application that enables users to monitor daily activities.",
-    tech: ["Next.js 14", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    result:
-      "Improved productivity management by providing real-time tracking, structured insights, and secure user authentication with scalable backend services.",
-    icon: Database,
-    hoverGradient: "from-rose-500 to-pink-500",
-    github: "https://github.com/Kpellehboy/productivity-pulse.git",
-    live: "https://drive.google.com/file/d/1R_uRdEucPMZ4ovPjN7lfjkp2KBJEtY_u/view?usp=sharing",
-    featured: true,
-  },
-
-  {
-    title: "Student Admission Predictor",
-    category: "Machine Learning",
-    description:
-      "This project implements an Ensemble Learning model, the Random Forest Regressor, to predict the number of students accepted for admission based on historical entrance data.",
-    tech: ["Python", "Scikit-learn", "Pandas"],
-    result: "Achieved high prediction accuracy for admission forecasting.",
-    icon: Users,
-    hoverGradient: "from-purple-500 to-pink-500",
-    github: "https://github.com/Kpellehboy/Student-Admission-Predictor-MachineLearning.git"
-  },
-
-  {
-    title: "TaskFlow API",
-    category: "Backend Engineering",
-    description:
-      "REST API for task management with CRUD operations and structured backend logic.",
-    tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy"],
-    result: "Efficient task handling system with scalable API design.",
-    icon: Server,
-    hoverGradient: "from-emerald-500 to-teal-400",
-    github: "https://github.com/Kpellehboy/TaskFlowApp_API.git"
-  },
-  {
-    title: "Currency Exchange API",
-    category: "Backend Engineering",
-    description:
-      "API providing real-time currency conversion using external exchange rate data.",
-    tech: ["Python", "API Integration"],
-    result: "Accurate and fast currency conversion system.",
-    icon: Cloud,
-    hoverGradient: "from-orange-500 to-red-500",
-    github: "https://github.com/your-username/Country-Currency-Exchange-API",
-    live: "https://backendwizardsstage0-production.up.railway.app/",
-  }
-];
+const iconMap = {
+  bot: Bot,
+  server: Server,
+  cloud: Cloud,
+  database: Database,
+  shield: Shield,
+};
 
 export default function Projects() {
+  const featuredProjects = projects.filter(
+    (project) => project.featured
+  );
+
   return (
     <section
       id="projects"
@@ -98,100 +34,132 @@ export default function Projects() {
       {/* Background */}
       <div className="absolute inset-0 opacity-20" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold">
             <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h2>
 
-          <p className="mt-6 text-gray-600 dark:text-gray-400 text-lg">
-            I build scalable backend systems, web applications, and
-            cloud-ready solutions focused on real-world impact.
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
+            Selected projects showcasing my work in backend engineering,
+            artificial intelligence, cloud computing, and scalable software
+            development.
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Projects */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => {
-            const Icon = project.icon;
+          {featuredProjects.map((project) => {
+            const Icon = iconMap[project.icon] || Database;
 
             return (
-              <div
-                key={index}
-                className="group relative p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:scale-[1.02]"
+              <article
+                key={project.id}
+                className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900"
               >
-                {/* Featured */}
-                {project.featured && (
-                  <span className="absolute top-3 right-3 text-xs bg-yellow-400 text-black px-2 py-1 rounded">
+                {/* Featured Badge */}
+                <div className="absolute right-4 top-4">
+                  <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-semibold text-black">
                     Featured
                   </span>
+                </div>
+
+                {/* Icon */}
+                <div
+                  className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${project.hoverGradient}`}
+                >
+                  <Icon className="h-7 w-7 text-white" />
+                </div>
+
+                {/* Category */}
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                  {project.category}
+                </p>
+
+                {/* Title */}
+                <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+
+                {/* Status */}
+                <div className="mt-3">
+                  <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                    {project.status}
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-400">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md bg-gray-100 px-2 py-1 text-xs dark:bg-gray-800"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Highlights */}
+                {project.highlights?.length > 0 && (
+                  <div className="mt-6">
+                    <h4 className="mb-3 text-sm font-semibold text-gray-900 dark:text-white">
+                      Highlights
+                    </h4>
+
+                    <div className="space-y-2">
+                      {project.highlights
+                        .slice(0, 3)
+                        .map((highlight) => (
+                          <div
+                            key={highlight}
+                            className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
+                          >
+                            <Zap className="mt-0.5 h-4 w-4 text-blue-500" />
+
+                            <span>{highlight}</span>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
                 )}
 
-                {/* Card */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.hoverGradient} flex items-center justify-center mb-5`}
-                  >
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    {project.title}
-                  </h3>
-
-                  {/* Category */}
-                  <span className="text-xs text-blue-600 dark:text-blue-400">
-                    {project.category}
-                  </span>
-
-                  {/* Description */}
-                  <p className="mt-3 text-gray-600 dark:text-gray-400 text-sm">
-                    {project.description}
-                  </p>
-
-                  {/* Tech */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Result */}
-                  <p className="mt-4 text-sm font-semibold text-blue-600 flex items-center gap-2">
-                    <Zap className="w-4 h-4" />
-                    {project.result}
-                  </p>
-
-                  {/* Links */}
-                  <div className="mt-5 flex gap-4">
+                {/* Links */}
+                <div className="mt-8 flex items-center gap-5">
+                  {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
-                      className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-sm text-gray-600 transition hover:text-blue-600 dark:text-gray-300"
                     >
-                      GitHub ↗
+                      <Github className="h-4 w-4" />
+                      GitHub
                     </a>
+                  )}
 
+                  {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
-                      className="text-sm font-medium text-blue-600 hover:underline flex items-center"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
                     >
-                      Live Demo <ArrowRight className="ml-1 w-4 h-4" />
+                      Live Demo
+
+                      <ArrowRight className="h-4 w-4" />
                     </a>
-                  </div>
+                  )}
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -200,9 +168,9 @@ export default function Projects() {
         <div className="mt-20 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
+            className="inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
           >
-            Let’s Work Together
+            Let's Work Together
           </a>
         </div>
       </div>

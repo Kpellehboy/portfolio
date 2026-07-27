@@ -1,122 +1,157 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
-  { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
-  { id: "tech", label: "Skills" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-];
+import navigation from "../../data/navigation";
+import personal from "../../data/personal";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
 
-  /* SCROLL TO SECTION WITH OFFSET */
-  const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (!element) return;
+  // Smooth scrolling
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (!section) return;
 
     const offset = 80;
-    const top =
-      element.getBoundingClientRect().top + window.scrollY - offset;
 
-    window.scrollTo({ top, behavior: "smooth" });
+    const top =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      offset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+
     setOpen(false);
   };
 
-  /* ACTIVE LINK DETECTION */
+  // Detect active section
   useEffect(() => {
     const handleScroll = () => {
-      let current = "home";
+      let currentSection = navigation[0]?.id || "home";
 
-      navItems.forEach((item) => {
+      navigation.forEach((item) => {
         const section = document.getElementById(item.id);
+
         if (!section) return;
 
-        const top = section.offsetTop - 100;
+        const top = section.offsetTop - 120;
+
         if (window.scrollY >= top) {
-          current = item.id;
+          currentSection = item.id;
         }
       });
 
-      setActive(current);
+      setActive(currentSection);
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-lg">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
-        {/* LOGO */}
+        {/* Logo */}
         <button
-          onClick={() => scrollTo("home")}
-          className="text-xl font-semibold tracking-tight"
+          onClick={() => scrollToSection("home")}
+          className="text-left"
+          aria-label="Go to Home"
         >
-          <span className="bg-gradient-to-r from-blue-500 to-sky-400 bg-clip-text text-transparent">
-            Menuo
-          </span>{" "}
-          <span className="text-white">Tech</span>
+          <h1 className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-xl font-bold text-transparent">
+            {personal.firstName}
+          </h1>
+
+          <p className="text-xs tracking-wide text-slate-400">
+            {personal.title}
+          </p>
         </button>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {navItems.map((item) => (
+        {/* Desktop Navigation */}
+        <nav
+          className="hidden items-center gap-8 md:flex"
+          aria-label="Main Navigation"
+        >
+          {navigation.map((item) => (
             <button
               key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className={`relative transition ${
+              onClick={() => scrollToSection(item.id)}
+              aria-current={
+                active === item.id ? "page" : undefined
+              }
+              className={`relative text-sm font-medium transition-colors duration-300
+              ${
                 active === item.id
-                  ? "text-blue-400"
-                  : "text-gray-300 hover:text-white"
+                  ? "text-sky-400"
+                  : "text-slate-300 hover:text-white"
               }`}
             >
               {item.label}
 
-              {/* UNDERLINE */}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-blue-400 transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-[2px] bg-sky-400 transition-all duration-300
+                ${
                   active === item.id
                     ? "w-full"
-                    : "w-0 group-hover:w-full"
+                    : "w-0"
                 }`}
               />
             </button>
           ))}
         </nav>
 
-        {/* MOBILE BUTTON */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white"
+          className="text-white md:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded={open}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? (
+            <X size={24} />
+          ) : (
+            <Menu size={24} />
+          )}
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Navigation */}
       {open && (
-        <div className="md:hidden bg-gray-900/95 border-t border-gray-800 px-6 pb-6 pt-3 space-y-3">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className={`block w-full text-left py-2 text-base transition ${
-                active === item.id
-                  ? "text-blue-400"
-                  : "text-gray-300 hover:text-white"
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
+        <nav
+          className="border-t border-slate-800 bg-slate-950/95 px-6 py-5 md:hidden"
+          aria-label="Mobile Navigation"
+        >
+          <div className="space-y-3">
+            {navigation.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`block w-full rounded-lg py-2 text-left transition
+                ${
+                  active === item.id
+                    ? "font-semibold text-sky-400"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </nav>
       )}
     </header>
   );
