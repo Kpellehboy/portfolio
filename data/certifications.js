@@ -2,9 +2,41 @@ const certifications = [
   {
     id: 1,
 
+    title: "Natural Language Processing using Python",
+
+    issuer: "Infosys Springboard",
+
+    issued: "March 2026",
+
+    year: 2026,
+
+    category: "Artificial Intelligence",
+
+    status: "Completed",
+
+    credentialId: "",
+
+    credentialUrl: "",
+
+    skills: [
+      "Natural Language Processing",
+      "Python",
+      "Machine Learning",
+      "Text Processing",
+      "AI",
+    ],
+
+    featured: true,
+
+    logo: "/certifications/infosys.png",
+  },
+
+  {
+    id: 2,
+
     title: "5-Day AI Agents Intensive Course with Google",
 
-    issuer: "Kaggle",
+    issuer: "Kaggle × Google",
 
     issued: "December 2025",
 
@@ -32,79 +64,17 @@ const certifications = [
   },
 
   {
-    id: 2,
-
-    title: "SQL (Basic)",
-
-    issuer: "HackerRank",
-
-    issued: "2025",
-
-    year: 2025,
-
-    category: "Database",
-
-    status: "Completed",
-
-    credentialId: "6C7E9196B97B",
-
-    credentialUrl: "",
-
-    skills: [
-      "SQL",
-      "Database Queries",
-      "Relational Databases",
-    ],
-
-    featured: true,
-
-    logo: "/certifications/hackerrank.png",
-  },
-
-  {
     id: 3,
 
-    title: "Google Data Analytics",
+    title: "GenAI for IT: Transforming IT with Generative AI",
 
-    issuer: "Google",
-
-    issued: "June 2025",
-
-    year: 2025,
-
-    category: "Data Analytics",
-
-    status: "Completed",
-
-    credentialId: "PIIKF7QKV9CF",
-
-    credentialUrl: "",
-
-    skills: [
-      "Data Analytics",
-      "SQL",
-      "Spreadsheets",
-      "Data Visualization",
-      "Business Intelligence",
-    ],
-
-    featured: true,
-
-    logo: "/certifications/google.png",
-  },
-
-  {
-    id: 4,
-
-    title: "Python Data Structures and Algorithms",
-
-    issuer: "LinkedIn Learning",
+    issuer: "Infosys Springboard",
 
     issued: "November 2025",
 
     year: 2025,
 
-    category: "Programming",
+    category: "Generative AI",
 
     status: "Completed",
 
@@ -113,16 +83,49 @@ const certifications = [
     credentialUrl: "",
 
     skills: [
-      "Python",
-      "Data Structures",
-      "Algorithms",
-      "Problem Solving",
+      "Generative AI",
+      "LLMs",
+      "AI Applications",
+      "Prompt Engineering",
+      "Enterprise AI",
     ],
 
     featured: true,
 
-    logo: "/certifications/linkedin.png",
+    logo: "/certifications/infosys.png",
   },
+
+ {
+  id: 4,
+
+  title: "IBM Full Stack Software Developer Professional Certificate",
+
+  issuer: "IBM (Coursera)",
+
+  issued: "April 2025",
+
+  year: 2025,
+
+  category: "Software Engineering",
+
+  status: "Completed",
+
+  credentialId: "",
+
+  credentialUrl: "",
+
+  skills: [
+    "Node.js",
+    "Docker",
+    "Cloud Deployment",
+    "software development",
+    "Git",
+  ],
+
+  featured: true,
+
+  logo: "/certifications/ibm.png",
+}
 ];
 
 export default certifications;

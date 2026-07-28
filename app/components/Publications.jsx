@@ -1,9 +1,10 @@
 "use client";
 
 import publications from "../../data/publications";
+
 import {
-  BookOpen,
   Calendar,
+  BookOpen,
   ExternalLink,
   FileText,
 } from "lucide-react";
@@ -12,137 +13,226 @@ export default function Publications() {
   return (
     <section
       id="publications"
-      className="relative py-24 bg-white dark:bg-slate-900"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-[#081221] to-slate-900 py-24"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Background */}
+
+      <div className="absolute inset-0">
+
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[150px]" />
+
+        <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[150px]" />
+
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
 
         {/* Header */}
 
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="mx-auto max-w-3xl text-center">
 
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+            Research
+          </span>
 
-            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-              Publications & Research
-            </span>
-
+          <h2 className="mt-4 text-4xl font-bold text-white lg:text-5xl">
+            Publications
           </h2>
 
-          <p className="mt-6 text-lg text-slate-600 dark:text-slate-400">
-            Research papers, publications, and ongoing academic work in
-            Artificial Intelligence, Cloud Computing, Computer Vision,
-            Distributed Systems, and Network Security.
+          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-blue-500" />
+
+          <p className="mt-8 text-lg leading-8 text-slate-400">
+            Conference publications and ongoing research
+            in Artificial Intelligence, Computer Vision,
+            Edge AI and Intelligent Systems.
           </p>
 
         </div>
 
-        {/* Publications */}
+        {/* Timeline */}
 
-        <div className="mt-16 space-y-8">
+        <div className="relative mx-auto mt-20 max-w-5xl">
 
-          {publications.map((publication) => (
+          {/* Vertical Line */}
 
-            <article
-              key={publication.id}
-              className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950"
-            >
+          <div className="absolute left-5 top-0 h-full w-px bg-slate-700" />
 
-              <div className="flex flex-col gap-6 md:flex-row md:justify-between">
+          <div className="space-y-12">
 
-                <div className="flex-1">
+            {publications.map((publication) => (
 
-                  <div className="flex items-center gap-3">
+              <article
+                key={publication.id}
+                className="relative pl-16"
+              >
 
-                    <BookOpen className="text-blue-600" />
+                {/* Timeline Dot */}
 
-                    <span className="text-sm font-medium text-blue-600">
-                      {publication.type}
-                    </span>
+                <div className="absolute left-0 top-2 flex h-10 w-10 items-center justify-center rounded-full border border-blue-500 bg-slate-950 shadow-lg shadow-blue-500/20">
 
-                  </div>
-
-                  <h3 className="mt-4 text-2xl font-bold text-slate-900 dark:text-white">
-                    {publication.title}
-                  </h3>
-
-                  <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
-                    {publication.abstract}
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap gap-2">
-
-                    {publication.keywords.map((keyword) => (
-
-                      <span
-                        key={keyword}
-                        className="rounded-full bg-slate-100 px-3 py-1 text-sm dark:bg-slate-800"
-                      >
-                        {keyword}
-                      </span>
-
-                    ))}
-
-                  </div>
+                  <BookOpen
+                    size={18}
+                    className="text-blue-400"
+                  />
 
                 </div>
 
-                <div className="md:w-64">
+                {/* Publication Card */}
 
-                  <div className="space-y-4 rounded-xl bg-slate-50 p-5 dark:bg-slate-900">
+                <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 backdrop-blur-sm transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10">
 
-                    <div className="flex items-center gap-2">
+                  {/* Top Row */}
 
-                      <Calendar size={16} />
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
 
-                      <span>{publication.year}</span>
+                    <div className="flex-1">
 
-                    </div>
+                      {/* Venue */}
 
-                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-wider text-blue-400">
 
-                      <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
-                        {publication.status}
-                      </span>
+                        {publication.venue}
 
-                    </div>
+                      </p>
 
-                    {publication.link && (
+                      {/* Title */}
 
-                      <a
-                        href={publication.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-blue-600 hover:underline"
-                      >
-                        <ExternalLink size={16} />
+                      <h3 className="mt-3 text-2xl font-bold leading-snug text-white">
 
-                        View Publication
+                        {publication.title}
 
-                      </a>
+                      </h3>
 
-                    )}
+                      {/* Meta */}
 
-                    {!publication.link && (
+                      <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
 
-                      <div className="inline-flex items-center gap-2 text-slate-500">
+                        <span>
+                          {publication.authorPosition}
+                        </span>
 
-                        <FileText size={16} />
+                        <span className="h-1 w-1 rounded-full bg-slate-600" />
 
-                        Coming Soon
+                        <div className="flex items-center gap-2">
+
+                          <Calendar size={14} />
+
+                          {publication.month} {publication.year}
+
+                        </div>
 
                       </div>
 
-                    )}
+                      {/* Description */}
+
+                      <p className="mt-5 max-w-3xl leading-7 text-slate-300">
+
+                        {publication.description}
+
+                      </p>
+
+                      {/* Keywords */}
+
+                      <div className="mt-5 flex flex-wrap gap-2">
+
+                        {publication.keywords
+                          .slice(0, 4)
+                          .map((keyword) => (
+
+                            <span
+                              key={keyword}
+                              className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300"
+                            >
+                              {keyword}
+                            </span>
+
+                          ))}
+                      </div>
+
+                    </div>
+
+                    {/* Status Panel */}
+                    <div className="w-full rounded-xl border border-slate-800 bg-slate-900 p-5 md:w-56">
+
+
+                      <span
+                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${publication.status === "Accepted"
+                            ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                            : publication.status === "Submitted"
+                              ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                              : "bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                          }`}
+                      >
+                        {publication.status}
+                      </span>
+
+                      {/* Links */}
+
+                      <div className="mt-6 space-y-3">
+
+                        {publication.paper && (
+                          <a
+                            href={publication.paper}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-slate-300 transition hover:text-blue-400"
+                          >
+                            <ExternalLink size={16} />
+                            View Paper
+                          </a>
+                        )}
+
+                        {publication.code && (
+                          <a
+                            href={publication.code}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-slate-300 transition hover:text-blue-400"
+                          >
+                            <ExternalLink size={16} />
+                            Source Code
+                          </a>
+                        )}
+
+                        {publication.doi && (
+                          <a
+                            href={`https://doi.org/${publication.doi}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-slate-300 transition hover:text-blue-400"
+                          >
+                            <ExternalLink size={16} />
+                            DOI
+                          </a>
+                        )}
+
+                        {!publication.paper &&
+                          !publication.code &&
+                          !publication.doi && (
+                            <div className="flex items-center gap-2 text-sm text-slate-500">
+                              <FileText size={16} />
+                              Links coming soon
+                            </div>
+                          )}
+                      </div>
+                    </div>
 
                   </div>
-
                 </div>
+              </article>
 
-              </div>
+            ))}
 
-            </article>
+          </div>
+        </div>
 
-          ))}
+        {/* Bottom Note */}
+
+        <div className="mx-auto mt-20 max-w-3xl text-center">
+
+          <p className="text-sm leading-7 text-slate-500">
+             Additional publications and research outputs will be added as they become available.
+          </p>
 
         </div>
 

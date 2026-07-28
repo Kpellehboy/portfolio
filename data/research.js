@@ -35,23 +35,38 @@ const research = {
   ],
 
   currentFocus: [
-    "Building scalable backend systems with Node.js, Express.js, and PostgreSQL.",
-    "Researching efficient deep learning models for Edge AI and Computer Vision.",
-    "Learning cloud-native architectures and distributed computing.",
-    "Exploring secure backend development and network security principles.",
-    "Contributing to open-source software and research-driven projects.",
+    "Building scalable backend systems with Node.js, Express.js, PostgreSQL, and Prisma ORM following modern software engineering principles.",
+
+    "Researching efficient deep learning models for Edge AI and Computer Vision with a focus on resource-constrained intelligent systems.",
+
+    "Designing cloud-native and distributed computing architectures for scalable, reliable, and high-performance applications.",
+
+    "Developing secure software systems by integrating authentication, authorization, API security, and network security best practices.",
   ],
 
   favoriteSubjects: [
     {
-      name: "Cloud Technologies and Applications",
+      name: "Artificial Intelligence & Machine Learning",
       description:
-        "Focused on cloud-native application development, distributed services, deployment automation, and scalable infrastructure.",
+        "Studying intelligent systems, machine learning algorithms, deep learning, and data-driven approaches for solving complex real-world problems.",
     },
+
     {
-      name: "Network & Information Security",
+      name: "Computer Vision & Image Processing",
       description:
-        "Focused on authentication, cryptography, secure software design, vulnerability mitigation, and defensive engineering.",
+        "Exploring image processing, feature extraction, image analytics, object detection, and deep learning techniques for intelligent visual perception and Edge AI applications.",
+    },
+
+    {
+      name: "Cloud Computing & Distributed Systems",
+      description:
+        "Designing scalable cloud-native applications, distributed architectures, virtualization, and resilient computing systems for modern software platforms.",
+    },
+
+    {
+      name: "Backend Engineering & Network Security",
+      description:
+        "Building secure, scalable backend systems using RESTful APIs, authentication, database optimization, distributed architectures, and cybersecurity best practices.",
     },
   ],
 };

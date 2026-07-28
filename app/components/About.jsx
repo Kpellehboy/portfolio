@@ -2,54 +2,76 @@
 
 import Image from "next/image";
 import {
-  CheckCircle,
   Brain,
-  Rocket,
   Cloud,
+  Code2,
+  Eye,
+  Network,
+  Shield,
 } from "lucide-react";
 
 import personal from "../../data/personal";
 
-const icons = [
-  <CheckCircle className="w-4 h-4" />,
-  <Brain className="w-4 h-4" />,
-  <Rocket className="w-4 h-4" />,
-  <Cloud className="w-4 h-4" />,
-];
+const iconMap = {
+  "Artificial Intelligence": Brain,
+  "Backend Engineering": Code2,
+  "Cloud Computing": Cloud,
+  "Computer Vision": Eye,
+  "Distributed Systems": Network,
+  "Network Security": Shield,
+};
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-gray-50 py-24 dark:bg-gray-950"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-[#081221] to-slate-900 py-16 lg:py-20"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-grid-slate-100 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] dark:bg-grid-slate-800/20" />
+      {/* ================= BACKGROUND ================= */}
 
-      <div className="absolute right-20 top-40 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute inset-0">
 
-      <div className="absolute bottom-20 left-20 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />
+        {/* Left Glow */}
+
+        <div className="absolute left-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-blue-600/15 blur-[130px]" />
+
+        {/* Right Glow */}
+
+        <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-cyan-500/10 blur-[150px]" />
+
+        {/* Soft Grid */}
+
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:72px_72px]" />
+
+      </div>
+
+      {/* ================= CONTENT ================= */}
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
 
-        <div className="grid items-center gap-12 md:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-[360px_1fr]">
 
-          {/* Image */}
+          {/* ================= IMAGE ================= */}
 
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:justify-start">
 
-            <div className="group relative">
+            <div className="relative">
 
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-sky-500 opacity-50 blur-xl transition group-hover:opacity-70" />
+              {/* Glow */}
 
-              <div className="relative h-64 w-64 overflow-hidden rounded-2xl border-2 border-white shadow-2xl transition duration-500 group-hover:scale-105 dark:border-gray-800 md:h-80 md:w-80">
+              <div className="absolute -bottom-6 left-1/2 h-44 w-44 -translate-x-1/2 rounded-full bg-blue-500/20 blur-[90px]" />
+
+              {/* Image */}
+
+              <div className="relative overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
 
                 <Image
                   src={personal.aboutImage}
                   alt={personal.name}
-                  fill
+                  width={340}
+                  height={420}
                   priority
-                  className="object-cover object-top"
+                  className="h-[420px] w-[320px] object-cover object-top transition duration-500 hover:scale-[1.03]"
                 />
 
               </div>
@@ -58,39 +80,93 @@ export default function About() {
 
           </div>
 
-          {/* Content */}
+          {/* ================= TEXT ================= */}
 
-          <div>
+          <div className="max-w-3xl">
 
-            <h2 className="text-3xl font-bold md:text-4xl">
+            {/* Section Label */}
 
-              <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-                About Me
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+              About Me
+            </span>
+
+            {/* Heading */}
+
+            <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-white lg:text-4xl">
+              Building Intelligent Systems
+              <span className="block text-blue-400">
+                for Real-World Impact.
               </span>
-
             </h2>
 
-            <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-sky-500" />
+            {/* Divider */}
 
-            <div className="mt-6 space-y-4 leading-relaxed text-gray-600 dark:text-gray-400">
+            <div className="mt-5 h-1 w-16 rounded-full bg-blue-500" />
 
-              {personal.aboutParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+            {/* Intro */}
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
+              Passionate about combining Artificial Intelligence, Backend Engineering, Cloud Computing, and Computer Vision to design scalable, secure, and research-driven software solutions.
+            </p>
+
+            {/* About */}
+
+            <div className="mt-8 max-w-2xl space-y-5">
+
+              {personal.aboutParagraphs.map((paragraph, index) => (
+                <p
+                  key={paragraph}
+                  className={
+                    index === 0
+                      ? "text-[17px] font-medium leading-8 text-slate-200"
+                      : "text-[16px] font-light leading-8 tracking-[0.01em] text-slate-400"
+                  }
+                >
+                  {paragraph}
+                </p>
               ))}
 
             </div>
 
-            {/* Highlights */}
+            {/* Expertise */}
 
-            <div className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            <div className="mt-10">
 
-              {personal.highlights.map((item, index) => (
-                <FeatureItem
-                  key={item}
-                  icon={icons[index]}
-                  text={item}
-                />
-              ))}
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
+                Areas I'm Exploring
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+
+                {personal.highlights.map((item) => {
+
+                  const Icon = iconMap[item];
+
+                  return (
+
+                    <div
+                      key={item}
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-4 py-2 transition duration-300 hover:border-blue-500 hover:bg-slate-900"
+                    >
+
+                      {Icon && (
+                        <Icon
+                          size={16}
+                          className="text-blue-400"
+                        />
+                      )}
+
+                      <span className="text-sm font-medium text-slate-200">
+                        {item}
+                      </span>
+
+                    </div>
+
+                  );
+
+                })}
+
+              </div>
 
             </div>
 
@@ -99,21 +175,6 @@ export default function About() {
         </div>
 
       </div>
-
     </section>
-  );
-}
-
-function FeatureItem({ icon, text }) {
-  return (
-    <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-
-      <span className="text-blue-600 dark:text-blue-400">
-        {icon}
-      </span>
-
-      <span>{text}</span>
-
-    </div>
   );
 }

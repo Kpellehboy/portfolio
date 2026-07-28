@@ -1,345 +1,203 @@
+// data/projects.js
+
 const projects = [
+  /* ==========================================================
+   * FEATURED PROJECTS
+   * ========================================================== */
+
   {
     id: 1,
-    slug: "innovation-matrix-backend",
-
-    title: "Innovation Matrix Backend API",
-
-    category: "Backend Engineering",
-    type: "Open Source",
-
+    title: "Plant Disease Detection using MobileNetV2",
+    category: "Research • Computer Vision • Deep Learning",
     featured: true,
 
-    status: "In Progress",
-
-    year: 2026,
-
-    role: "Backend Engineer",
-
-    icon: "server",
-
-    hoverGradient: "from-emerald-500 to-teal-500",
+    icon: "bot",
+    hoverGradient: "from-emerald-500 via-green-500 to-lime-500",
 
     description:
-      "A production-grade REST API for a nonprofit organization built using Clean Architecture, Prisma ORM, PostgreSQL, JWT authentication, Redis caching, and comprehensive API documentation.",
+      "A lightweight deep learning research project for automated plant disease identification using MobileNetV2. The work focuses on efficient computer vision models for agricultural disease classification and has been accepted for publication in an IEEE conference.",
 
     technologies: [
-      "Node.js",
-      "Express.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "Redis",
-      "JWT",
-      "Swagger",
-      "Docker",
-      "Cloudinary",
-    ],
-
-    features: [
-      "Clean Architecture",
-      "Repository Pattern",
-      "REST API",
-      "JWT Authentication",
-      "Role-Based Access Control",
-      "Redis Caching",
-      "Swagger Documentation",
-      "Cloud File Uploads",
+      "Python",
+      "TensorFlow",
+      "MobileNetV2",
+      "Computer Vision",
+      "Deep Learning",
+      "Image Classification",
     ],
 
     highlights: [
-      "Designed a scalable backend architecture",
-      "Implemented role-based authentication",
-      "Integrated Redis caching for improved performance",
-      "Documented APIs using OpenAPI (Swagger)",
+      "Accepted IEEE Conference Paper",
+      "Efficient MobileNetV2 architecture",
+      "Agricultural disease classification",
+      "Computer vision research",
     ],
 
     github:
-      "https://github.com/Kpellehboy/innovation-matrix-backend",
+      "https://github.com/Kpellehboy/Plant-disease-detection-mobilenetv2",
 
     live: "",
 
-    image: "/projects/innovation-matrix.png",
+    image: "/projects/plant-disease.png",
 
-    repositoryVisibility: "Public",
+    status: "IEEE Paper Accepted",
   },
 
   {
     id: 2,
-    slug: "personal-portfolio",
-
-    title: "Personal Portfolio",
-
-    category: "Web Development",
-
-    type: "Personal",
-
+    title: "RAG Document Intelligence API",
+    category: "Generative AI • Backend Engineering",
     featured: true,
 
-    status: "Active",
-
-    year: 2026,
-
-    role: "Full-Stack Developer",
-
     icon: "database",
-
-    hoverGradient: "from-indigo-500 to-blue-500",
+    hoverGradient: "from-violet-600 via-indigo-600 to-blue-600",
 
     description:
-      "A modern research-focused portfolio built with Next.js featuring publications, education, experience, projects, certifications, and reusable data-driven architecture.",
+      "An AI-powered Retrieval-Augmented Generation (RAG) backend for intelligent document search, contextual question answering, and enterprise knowledge retrieval using modern Large Language Model workflows.",
 
     technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "JavaScript",
-      "Vercel",
-    ],
-
-    features: [
-      "Responsive Design",
-      "SEO Optimization",
-      "Dark Mode",
-      "Dynamic Components",
-      "Reusable Data Layer",
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LLMs",
+      "Vector Database",
+      "PostgreSQL",
+      "Docker",
     ],
 
     highlights: [
-      "Optimized for performance",
-      "Fully responsive across devices",
-      "Centralized data architecture",
-      "Designed for future scalability",
+      "Retrieval-Augmented Generation",
+      "Semantic document search",
+      "Context-aware question answering",
+      "Scalable AI backend",
     ],
 
     github:
-      "https://github.com/Kpellehboy/portfolio-",
+      "https://github.com/Kpellehboy/rag-document-intelligence-api",
 
-    live:
-      "https://elijahmflomo.vercel.app",
+    live: "",
 
-    image: "/projects/portfolio.png",
+    image: "/projects/rag-document-intelligence.png",
 
-    repositoryVisibility: "Public",
+    status: "In Progress",
   },
 
   {
     id: 3,
-    slug: "edge-ai-research",
-
-    title: "Edge AI Research Project",
-
-    category: "Artificial Intelligence",
-
-    type: "Research",
-
+    title: "AI-Commerce Assistant API",
+    category: "Artificial Intelligence • Backend Engineering",
     featured: true,
 
-    status: "Research",
-
-    year: 2026,
-
-    role: "Researcher",
-
     icon: "bot",
-
-    hoverGradient: "from-blue-500 to-cyan-500",
-
-    description:
-      "Research exploring efficient deep learning models for deployment on resource-constrained edge devices with emphasis on performance, efficiency, and practical deployment.",
-
-    technologies: [
-      "Python",
-      "PyTorch",
-      "OpenCV",
-      "NumPy",
-      "Computer Vision",
-    ],
-
-    features: [
-      "Edge AI",
-      "Computer Vision",
-      "Model Optimization",
-      "Performance Evaluation",
-    ],
-
-    highlights: [
-      "Focused on efficient inference",
-      "Investigated lightweight neural networks",
-      "Explored deployment on constrained hardware",
-    ],
-
-    github: "",
-
-    live: "",
-
-    image: "/projects/edge-ai.png",
-
-    repositoryVisibility: "Private",
-  },
-
-  {
-    id: 4,
-    slug: "distributed-cloud-application",
-
-    title: "Distributed Cloud Application",
-
-    category: "Cloud Computing",
-
-    type: "Academic",
-
-    featured: false,
-
-    status: "Planned",
-
-    year: 2026,
-
-    role: "Backend Engineer",
-
-    icon: "cloud",
-
-    hoverGradient: "from-sky-500 to-blue-500",
+    hoverGradient: "from-orange-500 via-amber-500 to-yellow-500",
 
     description:
-      "Cloud-native distributed application demonstrating scalable services, containerization, service communication, and distributed system principles.",
-
-    technologies: [
-      "Docker",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "Cloud Computing",
-    ],
-
-    features: [
-      "Containerization",
-      "Distributed Services",
-      "Caching",
-      "Scalable Architecture",
-    ],
-
-    highlights: [
-      "Microservice-oriented architecture",
-      "Cloud-native deployment",
-      "Scalable backend services",
-    ],
-
-    github: "",
-
-    live: "",
-
-    image: "/projects/cloud.png",
-
-    repositoryVisibility: "Private",
-  },
-
-  {
-    id: 5,
-    slug: "computer-vision-application",
-
-    title: "Computer Vision Application",
-
-    category: "Computer Vision",
-
-    type: "Research",
-
-    featured: false,
-
-    status: "Research",
-
-    year: 2026,
-
-    role: "Researcher",
-
-    icon: "bot",
-
-    hoverGradient: "from-purple-500 to-pink-500",
-
-    description:
-      "Computer vision application exploring image classification and object recognition using deep learning models and modern vision pipelines.",
-
-    technologies: [
-      "Python",
-      "PyTorch",
-      "OpenCV",
-      "TensorFlow",
-    ],
-
-    features: [
-      "Image Classification",
-      "Object Recognition",
-      "Visualization",
-      "Inference Pipeline",
-    ],
-
-    highlights: [
-      "Explored CNN architectures",
-      "Built end-to-end vision pipeline",
-      "Evaluated model performance",
-    ],
-
-    github: "",
-
-    live: "",
-
-    image: "/projects/computer-vision.png",
-
-    repositoryVisibility: "Private",
-  },
-
-  {
-    id: 6,
-    slug: "network-security-toolkit",
-
-    title: "Network Security Toolkit",
-
-    category: "Cybersecurity",
-
-    type: "Learning",
-
-    featured: false,
-
-    status: "Learning",
-
-    year: 2026,
-
-    role: "Developer",
-
-    icon: "shield",
-
-    hoverGradient: "from-orange-500 to-red-500",
-
-    description:
-      "Collection of security-focused backend utilities demonstrating authentication, authorization, encryption, and secure software engineering practices.",
+      "A production-ready AI-powered backend enabling natural language interaction with an e-commerce product catalog through intelligent RESTful APIs and conversational product discovery.",
 
     technologies: [
       "Node.js",
       "Express.js",
       "JavaScript",
-      "JWT",
-      "Security",
-    ],
-
-    features: [
-      "Authentication",
-      "Authorization",
-      "Encryption",
-      "Security Best Practices",
+      "REST API",
+      "AI Integration",
     ],
 
     highlights: [
-      "Implemented secure authentication",
-      "Explored encryption techniques",
-      "Applied backend security principles",
+      "Natural language product search",
+      "RESTful backend architecture",
+      "AI-assisted product discovery",
+      "Scalable API design",
     ],
 
-    github: "",
+    github:
+      "https://github.com/Kpellehboy/AI-Commerce-Assistant-API",
+
+    live:
+      "https://drive.google.com/file/d/1wJsAl3yLAOa84v0XgrLH48BFdqaQbk03/view",
+
+    image: "/projects/ai-commerce.png",
+
+    status: "Completed",
+  },
+
+  {
+  id: 4,
+
+  title: "AI Spend Audit",
+
+  category: "AI SaaS • Product Engineering",
+
+  status: "Deployed SaaS",
+
+  featured: true,
+
+  icon: "cloud",
+
+  hoverGradient: "from-indigo-600 via-blue-600 to-cyan-500",
+
+  description:
+    "An AI-powered SaaS platform that helps startups optimize AI software spending through deterministic audit rules and LLM-generated executive summaries.",
+
+  technologies: [
+    "Next.js",
+    "TypeScript",
+    "Supabase",
+    "Anthropic API",
+    "Tailwind CSS",
+    "Vercel",
+  ],
+
+  highlights: [
+    "Built a deterministic audit engine for transparent cost optimization.",
+    "Integrated Anthropic AI to generate executive audit summaries.",
+    "Developed a responsive SaaS dashboard with persistent reports.",
+  ],
+
+  github: "https://github.com/Kpellehboy/ai-spend-audit",
+
+  live: "https://ai-spend-audit-five.vercel.app",
+},
+
+  /* ==========================================================
+   * ADDITIONAL PROJECTS
+   * ========================================================== */
+
+  {
+    id: 5,
+    title: "AI Research Agent",
+    category: "Artificial Intelligence",
+
+    featured: false,
+
+    icon: "shield",
+    hoverGradient: "from-fuchsia-500 via-purple-500 to-pink-500",
+
+    description:
+      "An AI-powered research assistant designed to automate literature exploration, knowledge synthesis, intelligent information retrieval, and research workflow support using modern Large Language Models.",
+
+    technologies: [
+      "Python",
+      "LLMs",
+      "Prompt Engineering",
+      "AI Agents",
+      "Automation",
+    ],
+
+    highlights: [
+      "Research workflow automation",
+      "Large Language Models",
+      "Prompt engineering",
+      "Knowledge synthesis",
+    ],
+
+    github:
+      "https://github.com/Kpellehboy/AI-Research-Agent",
 
     live: "",
 
-    image: "/projects/security.png",
+    image: "/projects/research-agent.png",
 
-    repositoryVisibility: "Private",
+    status: "Active Development",
   },
 ];
 

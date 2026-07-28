@@ -73,12 +73,8 @@ export default function Navbar() {
           aria-label="Go to Home"
         >
           <h1 className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-xl font-bold text-transparent">
-            {personal.firstName}
+            {personal.name}
           </h1>
-
-          <p className="text-xs tracking-wide text-slate-400">
-            {personal.title}
-          </p>
         </button>
 
         {/* Desktop Navigation */}
@@ -94,21 +90,19 @@ export default function Navbar() {
                 active === item.id ? "page" : undefined
               }
               className={`relative text-sm font-medium transition-colors duration-300
-              ${
-                active === item.id
+              ${active === item.id
                   ? "text-sky-400"
                   : "text-slate-300 hover:text-white"
-              }`}
+                }`}
             >
               {item.label}
 
               <span
                 className={`absolute -bottom-1 left-0 h-[2px] bg-sky-400 transition-all duration-300
-                ${
-                  active === item.id
+                ${active === item.id
                     ? "w-full"
                     : "w-0"
-                }`}
+                  }`}
               />
             </button>
           ))}
@@ -141,11 +135,10 @@ export default function Navbar() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`block w-full rounded-lg py-2 text-left transition
-                ${
-                  active === item.id
+                ${active === item.id
                     ? "font-semibold text-sky-400"
                     : "text-slate-300 hover:text-white"
-                }`}
+                  }`}
               >
                 {item.label}
               </button>

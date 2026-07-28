@@ -1,113 +1,171 @@
-// data/experience.js
-
 const experience = [
   {
     id: 1,
-    position: "Backend Engineer",
-    company: "Innovation Matrix",
-    employmentType: "Volunteer",
+
+    position: "Backend Developer Intern",
+
+    company: "HNG Tech",
+
+    employmentType: "Internship",
+
     location: "Remote",
-    duration: "2025 – Present",
-    current: true,
+
+    duration: "March 2026 – May 2026",
+
+    current: false,
+
+    website: "https://hng.tech/",
 
     description:
-      "Designing and developing a scalable backend architecture for Innovation Matrix, a nonprofit organization, with a focus on security, performance, maintainability, and cloud deployment.",
+      "Worked as a Backend Developer Intern, designing scalable RESTful APIs, implementing secure authentication, and optimizing backend services using modern development practices.",
 
     responsibilities: [
-      "Designed a production-ready REST API using Node.js, Express.js, and TypeScript.",
-      "Implemented JWT authentication with role-based access control (RBAC).",
-      "Designed and optimized PostgreSQL database schemas using Prisma ORM.",
-      "Integrated Redis caching for improved application performance.",
-      "Developed reusable services following Clean Architecture principles.",
-      "Documented APIs using Swagger/OpenAPI.",
-      "Implemented secure file uploads and backend validation.",
+      "Built scalable RESTful APIs using FastAPI and Node.js.",
+      "Implemented JWT authentication and authorization.",
+      "Designed and optimized PostgreSQL and MongoDB databases.",
+      "Collaborated with distributed engineering teams using Git and GitHub.",
+      "Participated in code reviews and agile development workflows.",
     ],
 
     technologies: [
+      "FastAPI",
+      "Python",
       "Node.js",
-      "Express.js",
-      "TypeScript",
       "PostgreSQL",
-      "Prisma ORM",
-      "Redis",
+      "MongoDB",
       "JWT",
-      "Swagger",
-      "Cloudinary",
-      "Docker",
+      "Git",
       "GitHub",
     ],
 
     achievements: [
-      "Built a scalable backend architecture from the ground up.",
-      "Implemented secure authentication and authorization.",
-      "Designed a maintainable repository and service-layer architecture.",
+      "Delivered production-quality backend APIs.",
+      "Improved backend performance through database optimization.",
+      "Successfully completed internship milestones.",
     ],
   },
 
   {
     id: 2,
-    position: "Prompt Engineering Lead",
+
+    position: "AI Research & Data Analytics Intern",
+
     company: "Excelerate",
+
     employmentType: "Internship",
+
     location: "Remote",
-    duration: "2025",
+
+    duration: "September 2025 – December 2025",
+
     current: false,
 
+    website: "",
+
     description:
-      "Led prompt engineering initiatives and collaborated with cross-functional teams to improve AI-assisted workflows and solution quality.",
+      "Contributed to AI research initiatives, prompt engineering, and data analytics projects while collaborating with multidisciplinary remote teams.",
 
     responsibilities: [
-      "Designed and optimized prompts for AI-powered applications.",
-      "Collaborated with engineering teams on AI workflows.",
-      "Evaluated prompt performance and improved response quality.",
-      "Documented prompt engineering best practices.",
+      "Led a remote Prompt Engineering team.",
+      "Conducted AI research and prompt optimization.",
+      "Performed data analysis and visualization.",
+      "Supported AI-driven decision making.",
+      "Collaborated with international project teams.",
     ],
 
     technologies: [
+      "Python",
       "OpenAI",
       "Prompt Engineering",
-      "LLMs",
-      "Python",
-      "Git",
+      "Data Analytics",
+      "Excel",
+      "Power BI",
     ],
 
     achievements: [
-      "Improved prompt consistency across AI workflows.",
-      "Contributed to AI solution development within a collaborative team.",
+      "Improved prompt quality and consistency.",
+      "Contributed to AI research deliverables.",
+      "Supported data-driven project decisions.",
     ],
   },
 
   {
     id: 3,
-    position: "Software Engineering Intern",
-    company: "HNG Tech",
-    employmentType: "Internship",
-    location: "Remote",
-    duration: "2024",
+
+    position: "President",
+
+    company: "RIMT University Liberian Students' Union",
+
+    employmentType: "Leadership",
+
+    location: "Punjab, India",
+
+    duration: "August 2023 – January 2025",
+
     current: false,
 
+    website: "",
+
     description:
-      "Participated in collaborative software engineering projects, building backend services and gaining experience in agile development practices.",
+      "Provided leadership for the Liberian student community by coordinating academic, welfare, and engagement initiatives while representing student interests before university administration.",
 
     responsibilities: [
-      "Developed backend features for team projects.",
-      "Worked with REST APIs and databases.",
-      "Collaborated using Git and GitHub.",
-      "Participated in code reviews and sprint planning.",
+      "Represented Liberian students in university meetings.",
+      "Organized student welfare initiatives.",
+      "Coordinated cultural and academic events.",
+      "Mentored new international students.",
     ],
 
     technologies: [
-      "Node.js",
-      "Express.js",
-      "JavaScript",
-      "Git",
-      "GitHub",
-      "REST API",
+      "Microsoft Office",
+      "Excel",
+      "Documentation",
     ],
 
     achievements: [
-      "Successfully completed internship milestones.",
-      "Worked effectively in distributed engineering teams.",
+      "Strengthened student engagement.",
+      "Improved communication between students and university administration.",
+      "Successfully organized multiple student programs.",
+    ],
+  },
+
+  {
+    id: 4,
+
+    position: "Administrator",
+
+    company: "Child Care Initiative (Non-profit Organization)",
+
+    employmentType: "Full-time",
+
+    location: "Monrovia, Liberia",
+
+    duration: "September 2020 – August 2022",
+
+    current: false,
+
+    website: "",
+
+    description:
+      "Managed administrative operations, documentation, and child sponsorship records while ensuring accurate record keeping and organizational efficiency.",
+
+    responsibilities: [
+      "Maintained administrative records.",
+      "Managed child sponsorship documentation.",
+      "Prepared reports and official correspondence.",
+      "Coordinated office operations.",
+    ],
+
+    technologies: [
+      "Microsoft Office",
+      "Excel",
+      "Documentation",
+    ],
+
+    achievements: [
+      "Improved document organization.",
+      "Maintained accurate administrative records.",
+      "Supported efficient organizational operations.",
     ],
   },
 ];

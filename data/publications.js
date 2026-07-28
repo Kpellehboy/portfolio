@@ -2,45 +2,40 @@ const publications = [
   {
     id: 1,
 
-    slug: "efficient-deep-learning-models-for-edge-ai",
-
     featured: true,
 
-    title: "Efficient Deep Learning Models for Edge AI Applications",
+    slug: "automated-classification-of-multiclass-plant-disease-using-mobilenetv2",
+
+    title:
+      "Automated Classification of Multiclass Plant Disease Using MobileNetV2",
 
     authors: [
       "Elijah M. Flomo",
     ],
 
-    correspondingAuthor: "Elijah M. Flomo",
+    authorPosition: "First Author",
 
-    venue: "Research in Progress",
+    venue: "IEEE INCECT 2026",
 
-    publisher: "",
+    publisher: "IEEE",
 
-    type: "Research",
+    type: "Conference Paper",
 
-    status: "In Progress",
+    status: "Accepted",
 
     year: 2026,
 
-    month: "",
+    month: "August",
 
-    abstract:
-      "Research investigating lightweight deep learning architectures for deploying computer vision models on resource-constrained edge devices while maintaining high inference accuracy, low latency, and computational efficiency.",
+    description:
+      "Accepted research paper presenting a lightweight MobileNetV2-based deep learning model for multiclass plant disease classification, focusing on computational efficiency and practical deployment for agricultural applications.",
 
     keywords: [
-      "Edge AI",
       "Computer Vision",
       "Deep Learning",
-      "Model Optimization",
-      "Efficient AI",
-    ],
-
-    researchAreas: [
-      "Artificial Intelligence",
-      "Computer Vision",
-      "Edge Computing",
+      "MobileNetV2",
+      "Image Classification",
+      "Edge AI",
     ],
 
     paper: "",
@@ -49,84 +44,67 @@ const publications = [
 
     code: "",
 
-    presentation: "",
-
-    poster: "",
-
     doi: "",
 
     citation: "",
 
-    image: "/publications/edge-ai.png",
+    image: "/publications/plant-disease.png",
 
-    license: "",
-
-    peerReviewed: false,
+    peerReviewed: true,
   },
 
   {
     id: 2,
 
-    slug: "scalable-backend-architectures-for-nonprofit-platforms",
-
     featured: true,
 
+    slug:
+      "cross-architecture-knowledge-distillation-for-ultra-lightweight-medical-vision-transformers",
+
     title:
-      "Scalable Backend Architectures for Nonprofit Digital Platforms",
+      "Promise and Limits of Cross-Architecture Knowledge Distillation for Ultra-Lightweight Medical Vision Transformers at the Edge",
 
     authors: [
       "Elijah M. Flomo",
+      "Research Team",
     ],
 
-    correspondingAuthor: "Elijah M. Flomo",
+    authorPosition: "Second Author",
 
-    venue: "Technical Report",
+    venue: "EDIGE 2026",
 
-    publisher: "",
+    publisher: "EDIGE",
 
-    type: "Technical Writing",
+    type: "Conference Paper",
 
-    status: "In Preparation",
+    status: "Submitted",
 
     year: 2026,
 
-    month: "",
+    month: "June",
 
-    abstract:
-      "A practical study on designing secure and scalable backend systems using Clean Architecture, PostgreSQL, Prisma ORM, Redis, JWT authentication, and modern REST API best practices for nonprofit digital platforms.",
+    description:
+      "Submitted research investigating cross-architecture knowledge distillation techniques for lightweight Vision Transformers targeting edge-based medical image analysis with improved computational efficiency.",
 
     keywords: [
-      "Backend Engineering",
-      "REST API",
-      "Cloud Computing",
-      "Node.js",
-      "Prisma ORM",
-    ],
-
-    researchAreas: [
-      "Backend Engineering",
-      "Cloud Computing",
-      "Distributed Systems",
+      "Vision Transformers",
+      "Knowledge Distillation",
+      "Medical Imaging",
+      "Edge AI",
+      "Computer Vision",
     ],
 
     paper: "",
 
     preprint: "",
 
-    code:
-      "https://github.com/Kpellehboy/innovation-matrix-backend",
-
-    presentation: "",
-
-    poster: "",
+    code: "",
 
     doi: "",
 
     citation: "",
 
-    image: "/publications/backend.png",
-
-    license: "",
+    image: "/publications/vit-edge.png",
 
     peerReviewed: false,
   },

@@ -20,7 +20,7 @@ const personal = {
    * ========================================================== */
 
   title:
-    "AI Researcher • Backend Engineer • Cloud Computing Enthusiast",
+    "AI Researcher | Computer Vision | Edge AI | Backend Engineering | Cloud Computing",
 
   subtitle:
     "Graduate Computer Science Student specializing in Artificial Intelligence, Backend Engineering, Cloud Computing, and Distributed Systems.",
@@ -59,17 +59,15 @@ const personal = {
    * ABOUT
    * ========================================================== */
 
-  bio:
-    "Graduate Computer Science student with research interests spanning Artificial Intelligence, Backend Engineering, Cloud Computing, Distributed Systems, Computer Vision, and Network Security. Passionate about transforming research ideas into production-ready software.",
+  aboutIntro:
+    "Passionate about designing intelligent, scalable, and secure software systems through Artificial Intelligence, Backend Engineering, and Cloud Computing while bridging academic research with practical engineering.",
 
   aboutParagraphs: [
-    "I am a graduate Computer Science student with a strong interest in Artificial Intelligence, Backend Engineering, Cloud Computing, and Distributed Systems. I enjoy building scalable software that bridges academic research and practical applications.",
+    "I am a graduate Computer Science student passionate about developing intelligent software systems that combine Artificial Intelligence, scalable backend engineering, and cloud technologies to address practical real-world challenges.",
 
-    "My experience includes designing secure backend architectures, REST APIs, and database-driven applications using Node.js, Express.js, TypeScript, PostgreSQL, and Prisma ORM.",
+    "My research interests focus on Edge AI, Computer Vision, Cloud Computing, Distributed Systems, and trustworthy AI. I enjoy exploring efficient computing techniques that enable intelligent applications to operate effectively in real-world environments.",
 
-    "Beyond software engineering, I actively explore Edge AI, Computer Vision, efficient deep learning models, and trustworthy AI systems for deployment on resource-constrained devices.",
-
-    "My long-term goal is to contribute to research and industry by developing intelligent cloud-native systems that solve real-world problems while advancing efficient and trustworthy AI.",
+    "As I continue my graduate studies, I aspire to contribute to both academia and industry by advancing intelligent cloud-native systems, distributed computing, and AI-driven solutions that create meaningful societal impact.",
   ],
 
   highlights: [

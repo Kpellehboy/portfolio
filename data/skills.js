@@ -182,21 +182,6 @@ const skills = [
     ],
   },
 
-  {
-    id: 10,
-
-    category: "Languages",
-
-    icon: "language",
-
-    description:
-      "Languages used for professional communication.",
-
-    skills: [
-      "English (Professional)",
-      "Kpelle (Native)",
-    ],
-  },
 ];
 
 export default skills;

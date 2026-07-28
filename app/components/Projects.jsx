@@ -29,121 +29,143 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-24 bg-gray-50 dark:bg-gray-950"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-[#081221] to-slate-900 py-24"
     >
-      {/* Background */}
-      <div className="absolute inset-0 opacity-20" />
+      {/* Background Effects */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-              Featured Projects
-            </span>
+      <div className="absolute inset-0">
+
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[140px]" />
+
+        <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[140px]" />
+
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:70px_70px]" />
+
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+        {/* Section Header */}
+
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+
+          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+            Portfolio
+          </span>
+
+          <h2 className="mt-4 text-4xl font-bold text-white lg:text-5xl">
+            Featured Projects
           </h2>
 
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
-            Selected projects showcasing my work in backend engineering,
-            artificial intelligence, cloud computing, and scalable software
-            development.
+          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-blue-500" />
+
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+            A selection of research and software engineering projects
+            demonstrating my interests in Artificial Intelligence,
+            Backend Engineering, Computer Vision, and Cloud Computing.
           </p>
+
         </div>
 
-        {/* Projects */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Featured Projects */}
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+
           {featuredProjects.map((project) => {
-            const Icon = iconMap[project.icon] || Database;
+
+            const Icon =
+              iconMap[project.icon] || Database;
 
             return (
+
               <article
                 key={project.id}
-                className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900"
+                className="group flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/60 hover:shadow-xl hover:shadow-blue-500/10"
               >
-                {/* Featured Badge */}
-                <div className="absolute right-4 top-4">
-                  <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-semibold text-black">
+                {/* Header */}
+                <div className="flex items-start justify-between">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${project.hoverGradient}`}
+                  >
+                    <Icon size={20} className="text-white" />
+                  </div>
+
+                  <span className="rounded-full border border-yellow-500/20 bg-yellow-500/10 px-2.5 py-1 text-[11px] font-semibold text-yellow-300">
                     Featured
                   </span>
                 </div>
 
-                {/* Icon */}
-                <div
-                  className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${project.hoverGradient}`}
-                >
-                  <Icon className="h-7 w-7 text-white" />
-                </div>
-
                 {/* Category */}
-                <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                <p className="mt-4 text-[11px] font-semibold uppercase tracking-wider text-blue-400">
                   {project.category}
                 </p>
 
                 {/* Title */}
-                <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+                <h3 className="mt-2 text-xl font-bold text-white">
                   {project.title}
                 </h3>
 
                 {/* Status */}
                 <div className="mt-3">
-                  <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                  <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-2.5 py-1 text-[11px] font-semibold text-blue-300">
                     {project.status}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-400">
+                <p className="mt-4 text-sm leading-6 text-slate-300 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-gray-100 px-2 py-1 text-xs dark:bg-gray-800"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.technologies
+                    .slice(0, 4)
+                    .map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md border border-slate-700 bg-slate-800 px-2 py-1 text-[11px] font-medium text-slate-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                 </div>
 
-                {/* Highlights */}
-                {project.highlights?.length > 0 && (
-                  <div className="mt-6">
-                    <h4 className="mb-3 text-sm font-semibold text-gray-900 dark:text-white">
-                      Highlights
-                    </h4>
+                {/* Key Highlights */}
+                <div className="mt-5 space-y-2">
+                  {project.highlights
+                    ?.slice(0, 2)
+                    .map((highlight) => (
+                      <div
+                        key={highlight}
+                        className="flex items-start gap-2"
+                      >
+                        <Zap
+                          size={14}
+                          className="mt-1 shrink-0 text-blue-400"
+                        />
 
-                    <div className="space-y-2">
-                      {project.highlights
-                        .slice(0, 3)
-                        .map((highlight) => (
-                          <div
-                            key={highlight}
-                            className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
-                          >
-                            <Zap className="mt-0.5 h-4 w-4 text-blue-500" />
+                        <span className="text-sm leading-6 text-slate-300">
+                          {highlight}
+                        </span>
+                      </div>
+                    ))}
+                </div>
 
-                            <span>{highlight}</span>
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Links */}
-                <div className="mt-8 flex items-center gap-5">
-                  {project.github && (
+                {/* Footer */}
+                <div className="mt-auto flex items-center justify-between border-t border-slate-800 pt-5">
+                  {project.github ? (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-gray-600 transition hover:text-blue-600 dark:text-gray-300"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-blue-400"
                     >
-                      <Github className="h-4 w-4" />
+                      <Github size={16} />
                       GitHub
                     </a>
+                  ) : (
+                    <div />
                   )}
 
                   {project.live && (
@@ -151,29 +173,45 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition hover:text-blue-300"
                     >
                       Live Demo
-
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight size={16} />
                     </a>
                   )}
                 </div>
               </article>
+
             );
+
           })}
+
         </div>
 
         {/* CTA */}
-        <div className="mt-20 text-center">
+
+        <div className="mt-24 text-center">
+
+          <p className="mb-6 text-lg text-slate-400">
+            Interested in collaborating on AI research, backend engineering,
+            or cloud-native software development?
+          </p>
+
           <a
             href="#contact"
-            className="inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
+            className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/40"
           >
+
             Let's Work Together
+
+            <ArrowRight size={20} />
+
           </a>
+
         </div>
+
       </div>
+
     </section>
   );
 }
