@@ -1,3 +1,5 @@
+// data/skills.js
+
 const skills = [
   {
     id: 1,
@@ -7,138 +9,127 @@ const skills = [
     icon: "code",
 
     description:
-      "Core programming languages used for software engineering, backend development, artificial intelligence, and algorithm design.",
+      "Programming languages used across backend engineering, artificial intelligence, data analysis, and software development.",
 
     skills: [
       "Python",
       "JavaScript",
-      "TypeScript",
-      "Java",
-      "SQL",
-      "C",
     ],
   },
 
   {
     id: 2,
 
-    category: "Frontend Development",
+    category: "Backend Engineering",
 
-    icon: "frontend",
+    icon: "server",
 
     description:
-      "Technologies for building responsive, accessible, and modern web interfaces.",
+      "Backend technologies used to design RESTful APIs, authentication systems, and maintainable server-side applications.",
 
     skills: [
-      "React.js",
-      "Next.js",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
+      "FastAPI",
+      "Flask",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT Authentication",
     ],
   },
 
   {
     id: 3,
 
-    category: "Backend Engineering",
+    category: "Databases",
 
     icon: "database",
 
     description:
-      "Frameworks and technologies for designing secure, scalable, and maintainable backend systems.",
+      "Database technologies used for building reliable, data-driven backend applications and scalable information systems.",
 
     skills: [
-      "Node.js",
-      "Express.js",
-      "REST API",
-      "JWT Authentication",
-      "RBAC",
-      "Prisma ORM",
-      "Swagger / OpenAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Database Design",
+      "Query Optimization",
     ],
   },
 
   {
     id: 4,
 
-    category: "Databases",
+    category: "Artificial Intelligence & Machine Learning",
 
-    icon: "database",
+    icon: "ai",
 
     description:
-      "Relational, NoSQL, and in-memory databases used for scalable applications.",
+      "AI and machine learning technologies applied to intelligent applications, research, natural language processing, and computer vision.",
 
     skills: [
-      "PostgreSQL",
-      "MySQL",
-      "MongoDB",
-      "Redis",
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "Generative AI",
+      "Applied NLP",
+      "Prompt Engineering",
     ],
   },
 
   {
     id: 5,
 
-    category: "Artificial Intelligence & Machine Learning",
+    category: "Data Science & Analytics",
 
-    icon: "ai",
+    icon: "analytics",
 
     description:
-      "Libraries and frameworks for deep learning, computer vision, and intelligent systems.",
+      "Data analysis and visualization techniques used to transform data into actionable insights and support evidence-based decision-making.",
 
     skills: [
-      "PyTorch",
-      "TensorFlow",
-      "OpenCV",
-      "Scikit-learn",
-      "NumPy",
-      "Pandas",
-      "Computer Vision",
-      "Deep Learning",
-      "Machine Learning",
+      "Data Analysis",
+      "Data Visualization",
+      "SQL",
+      "Statistical Analysis",
+      "Data-Driven Decision Making",
     ],
   },
 
   {
     id: 6,
 
-    category: "Cloud & DevOps",
+    category: "Cloud & Deployment",
 
     icon: "cloud",
 
     description:
-      "Deployment, containerization, version control, and cloud-native development tools.",
+      "Cloud and deployment platforms used to develop, deploy, and maintain modern web and backend applications.",
 
     skills: [
-      "Docker",
-      "Git",
-      "GitHub",
-      "Linux",
       "Cloud Computing",
-      "CI/CD",
       "Vercel",
+      "Render",
+      "Cloud Deployment",
     ],
   },
 
   {
     id: 7,
 
-    category: "Cybersecurity",
+    category: "Software Engineering",
 
-    icon: "security",
+    icon: "engineering",
 
     description:
-      "Security principles and technologies for building resilient applications and APIs.",
+      "Engineering practices used to build maintainable, secure, scalable, and production-oriented software systems.",
 
     skills: [
-      "Network Security",
+      "API Design",
       "Authentication",
-      "Authorization",
-      "JWT",
-      "RBAC",
+      "Backend Architecture",
       "Secure API Design",
-      "Cryptography Fundamentals",
+      "Database-Driven Applications",
+      "Software Development",
     ],
   },
 
@@ -150,14 +141,14 @@ const skills = [
     icon: "tools",
 
     description:
-      "Development environments, testing tools, API clients, and productivity software.",
+      "Tools used for source control, API development, application deployment, testing, and everyday software engineering workflows.",
 
     skills: [
-      "VS Code",
+      "Git",
+      "GitHub",
       "Postman",
-      "Figma",
-      "Cloudinary",
-      "npm",
+      "Vercel",
+      "Render",
     ],
   },
 
@@ -169,19 +160,18 @@ const skills = [
     icon: "research",
 
     description:
-      "Research, analytical, and collaboration skills applied in academic and professional environments.",
+      "Research and professional capabilities developed through academic research, internships, technical projects, and collaborative work.",
 
     skills: [
-      "Research",
+      "AI Research",
       "Technical Writing",
+      "Prompt Engineering",
       "Problem Solving",
-      "Critical Thinking",
-      "Leadership",
-      "Team Collaboration",
-      "Communication",
+      "Data Analysis",
+      "Team Leadership",
+      "Technical Communication",
     ],
   },
-
 ];
 
 export default skills;
