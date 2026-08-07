@@ -142,7 +142,7 @@ export default function Research() {
         </div>
 
         {/* Favorite Subjects */}
-
+        {/* 
         <div className="mt-24">
 
           <div className="mb-8">
@@ -180,7 +180,7 @@ export default function Research() {
 
           </div>
 
-        </div>
+        </div> */}
 
       </div>
     </section>
