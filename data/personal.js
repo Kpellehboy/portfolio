@@ -2,40 +2,34 @@
 
 const personal = {
   /* ==========================================================
-   * BASIC INFORMATION
-   * ========================================================== */
+     BASIC INFORMATION
+     ========================================================== */
 
   firstName: "Elijah",
-
   middleName: "M.",
-
   lastName: "Flomo",
-
   name: "Elijah M. Flomo",
-
   initials: "EF",
 
   /* ==========================================================
-   * PROFESSIONAL PROFILE
-   * ========================================================== */
+     PROFESSIONAL PROFILE
+     ========================================================== */
 
   title:
     "AI Researcher | Computer Vision | Edge AI | Backend Engineering | Cloud Computing",
 
   subtitle:
-    "Graduate Computer Science Student specializing in Artificial Intelligence, Backend Engineering, Cloud Computing, and Distributed Systems.",
+    "Graduate Computer Science Student specializing in Artificial Intelligence, Computer Vision, Edge AI, Backend Engineering, and Cloud Computing.",
 
   headline:
-    "Building intelligent, scalable, and trustworthy software systems through Artificial Intelligence, Backend Engineering, and Cloud Computing.",
+    "Building intelligent, scalable, and trustworthy systems across Edge AI, Computer Vision, Cloud Computing, and Distributed Systems.",
 
-  currentPosition:
-    "Graduate Computer Science Student",
+  currentPosition: "Graduate Computer Science Student",
 
-  institution:
-    "National Institute of Technology, Warangal",
+  institution: "National Institute of Technology, Warangal",
 
   heroDescription:
-    "Passionate about building scalable backend systems, trustworthy AI solutions, and intelligent applications that create meaningful real-world impact. My research focuses on Edge AI, Computer Vision, and efficient deep learning for resource-constrained devices.",
+    "I build intelligent and scalable software systems at the intersection of Artificial Intelligence, Computer Vision, Edge AI, Backend Engineering, and Cloud Computing. My research focuses on efficient intelligent systems, computer vision, and secure cloud and distributed architectures.",
 
   heroTags: [
     "Artificial Intelligence",
@@ -43,11 +37,12 @@ const personal = {
     "Computer Vision",
     "Backend Engineering",
     "Cloud Computing",
+    "Distributed Systems",
   ],
 
   /* ==========================================================
-   * IMAGES & DOCUMENTS
-   * ========================================================== */
+     IMAGES & DOCUMENTS
+     ========================================================== */
 
   profileImage: "/hero.jpeg",
 
@@ -56,48 +51,60 @@ const personal = {
   resume: "/Elijah_M_Flomo_CV.pdf",
 
   /* ==========================================================
-   * ABOUT
-   * ========================================================== */
+     ABOUT
+     ========================================================== */
 
   aboutIntro:
-    "Passionate about designing intelligent, scalable, and secure software systems through Artificial Intelligence, Backend Engineering, and Cloud Computing while bridging academic research with practical engineering.",
+    "I am interested in designing intelligent, efficient, and scalable software systems that connect Artificial Intelligence research with practical engineering and real-world deployment.",
 
   aboutParagraphs: [
-    "I am a graduate Computer Science student passionate about developing intelligent software systems that combine Artificial Intelligence, scalable backend engineering, and cloud technologies to address practical real-world challenges.",
+    "I am a graduate Computer Science student with interests spanning Artificial Intelligence, Computer Vision, Edge AI, Backend Engineering, and Cloud Computing. I enjoy building systems that combine intelligent algorithms with reliable software infrastructure.",
 
-    "My research interests focus on Edge AI, Computer Vision, Cloud Computing, Distributed Systems, and trustworthy AI. I enjoy exploring efficient computing techniques that enable intelligent applications to operate effectively in real-world environments.",
+    "My research interests focus on Edge AI and Intelligent Systems, Computer Vision and Image Analysis, and Secure Cloud Computing and Distributed Systems. I am particularly interested in efficient AI, resource-constrained inference, intelligent visual systems, scalable architectures, and secure deployment of AI applications.",
 
-    "As I continue my graduate studies, I aspire to contribute to both academia and industry by advancing intelligent cloud-native systems, distributed computing, and AI-driven solutions that create meaningful societal impact.",
+    "Alongside research, I develop production-oriented backend systems using modern software engineering practices. My goal is to bridge AI research with scalable cloud and distributed platforms while contributing to both academic research and industry-focused engineering.",
   ],
 
   highlights: [
     "Artificial Intelligence",
-    "Backend Engineering",
-    "Cloud Computing",
-    "Computer Vision",
-    "Distributed Systems",
-    "Network Security",
-  ],
-
-  /* ==========================================================
-   * RESEARCH
-   * ========================================================== */
-
-  researchAreas: [
-    "Artificial Intelligence",
     "Edge AI",
     "Computer Vision",
-    "Machine Learning",
-    "Deep Learning",
+    "Backend Engineering",
     "Cloud Computing",
     "Distributed Systems",
+  ],
+
+  /* ==========================================================
+     RESEARCH
+     ========================================================== */
+
+  researchAreas: [
+    "Edge AI & Intelligent Systems",
+    "Computer Vision & Image Analysis",
+    "Secure Cloud Computing & Distributed Systems",
+  ],
+
+  /* ==========================================================
+     TECHNICAL SPECIALIZATIONS
+     ========================================================== */
+
+  technicalInterests: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Deep Learning",
+    "Computer Vision",
+    "Edge AI",
+    "Efficient AI",
     "Backend Engineering",
+    "Cloud Computing",
+    "Distributed Systems",
+    "AI Security",
     "Network Security",
   ],
 
   /* ==========================================================
-   * CONTACT
-   * ========================================================== */
+     CONTACT
+     ========================================================== */
 
   contact: {
     email: "elijahmflomo@gmail.com",
@@ -115,31 +122,28 @@ const personal = {
     linkedin:
       "https://www.linkedin.com/in/elijah-m-flomo-a7a253267",
 
-    portfolio:
-      "https://elijahmflomo.vercel.app",
+    portfolio: "https://elijahmflomo.vercel.app",
 
     cv: "/Elijah_M_Flomo_CV.pdf",
 
     availability:
-      "Open to research collaborations, graduate research positions, internships, AI projects, and backend engineering opportunities.",
+      "Open to research collaborations, graduate research opportunities, internships, AI projects, backend engineering, and cloud computing opportunities.",
 
     availabilityStatus: "Available for Opportunities",
   },
 
   /* ==========================================================
-   * SOCIAL LINKS
-   * ========================================================== */
+     SOCIAL LINKS
+     ========================================================== */
 
   github: "https://github.com/Kpellehboy",
 
   linkedin:
     "https://www.linkedin.com/in/elijah-m-flomo-a7a253267",
 
-  portfolio:
-    "https://elijahmflomo.vercel.app",
+  portfolio: "https://elijahmflomo.vercel.app",
 
-  email:
-    "mailto:elijahmflomo@gmail.com",
+  email: "mailto:elijahmflomo@gmail.com",
 
   social: {
     github: "https://github.com/Kpellehboy",
@@ -147,11 +151,9 @@ const personal = {
     linkedin:
       "https://www.linkedin.com/in/elijah-m-flomo-a7a253267",
 
-    portfolio:
-      "https://elijahmflomo.vercel.app",
+    portfolio: "https://elijahmflomo.vercel.app",
 
-    email:
-      "mailto:elijahmflomo@gmail.com",
+    email: "mailto:elijahmflomo@gmail.com",
   },
 
   socialLinks: [
@@ -160,11 +162,13 @@ const personal = {
       icon: "github",
       url: "https://github.com/Kpellehboy",
     },
+
     {
       name: "LinkedIn",
       icon: "linkedin",
       url: "https://www.linkedin.com/in/elijah-m-flomo-a7a253267",
     },
+
     {
       name: "Email",
       icon: "mail",
@@ -173,8 +177,8 @@ const personal = {
   ],
 
   /* ==========================================================
-   * CALL TO ACTION
-   * ========================================================== */
+     CALL TO ACTION
+     ========================================================== */
 
   cta: {
     primary: {
@@ -189,61 +193,71 @@ const personal = {
   },
 
   /* ==========================================================
-   * PORTFOLIO STATS
-   * ========================================================== */
+     PORTFOLIO STATS
+     ========================================================== */
 
   stats: [
     {
       label: "Projects",
       value: "10+",
     },
+
     {
       label: "Research Areas",
-      value: "6+",
+      value: "3",
     },
+
     {
       label: "Certifications",
       value: "4+",
     },
+
     {
       label: "Technologies",
-      value: "35+",
+      value: "30+",
     },
   ],
 
   /* ==========================================================
-   * FOOTER
-   * ========================================================== */
+     FOOTER
+     ========================================================== */
 
   footer: {
     tagline:
-      "Building intelligent systems through Artificial Intelligence, Backend Engineering, and Cloud Computing.",
+      "Building intelligent systems through Artificial Intelligence, Edge AI, Computer Vision, Backend Engineering, and Cloud Computing.",
 
     copyright: `© ${new Date().getFullYear()} Elijah M. Flomo. All rights reserved.`,
   },
 
   /* ==========================================================
-   * SEO
-   * ========================================================== */
+     SEO
+     ========================================================== */
 
   seo: {
     title:
-      "Elijah M. Flomo | AI Researcher | Backend Engineer",
+      "Elijah M. Flomo | AI Researcher & Backend Engineer",
 
     description:
-      "Official portfolio of Elijah M. Flomo showcasing research, backend engineering projects, publications, certifications, and academic achievements.",
+      "Official portfolio of Elijah M. Flomo, a graduate Computer Science student and AI researcher working across Edge AI, Computer Vision, Backend Engineering, Cloud Computing, and Distributed Systems.",
 
     keywords: [
+      "Elijah M. Flomo",
       "Artificial Intelligence",
+      "AI Researcher",
       "Edge AI",
       "Computer Vision",
+      "Computer Vision Research",
+      "Efficient AI",
       "Backend Engineering",
       "Cloud Computing",
       "Distributed Systems",
+      "AI Security",
+      "Network Security",
       "Machine Learning",
-      "Portfolio",
-      "Research",
+      "Deep Learning",
       "Computer Science",
+      "AI Engineer",
+      "Backend Engineer",
     ],
   },
 };
