@@ -1,16 +1,20 @@
 "use client";
 
 import research from "../../data/research";
+
 import {
   Cpu,
   Eye,
   ShieldCheck,
   Cloud,
   Lock,
-  ArrowRight,
 } from "lucide-react";
 
-const icons = {
+/* ==========================================================
+   ICON MAP
+   ========================================================== */
+
+const iconMap = {
   cpu: Cpu,
   eye: Eye,
   "shield-check": ShieldCheck,
@@ -18,170 +22,147 @@ const icons = {
   lock: Lock,
 };
 
+/* ==========================================================
+   RESEARCH COMPONENT
+   ========================================================== */
+
 export default function Research() {
   return (
     <section
       id="research"
-      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-[#081221] to-slate-900 py-20"
+      aria-labelledby="research-heading"
+      className="relative overflow-hidden bg-slate-950 py-24 lg:py-28"
     >
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* ======================================================
+          BACKGROUND EFFECTS
+          ====================================================== */}
 
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+      >
+        {/* Top-left glow */}
         <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-blue-600/10 blur-[140px]" />
 
+        {/* Bottom-right glow */}
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[160px]" />
 
-        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:72px_72px]" />
-
+        {/* Subtle grid */}
+        <div className="absolute inset-0 opacity-[0.025] [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:72px_72px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      {/* ======================================================
+          CONTENT
+          ====================================================== */}
 
-        {/* Header */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        {/* ====================================================
+            HEADER
+            ==================================================== */}
 
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-
+        <div className="mx-auto mb-14 max-w-3xl text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
             Research
           </span>
 
-          <h2 className="mt-3 text-4xl font-bold text-white">
+          <h2
+            id="research-heading"
+            className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          >
             Research Interests
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-400">
-            My research focuses on developing intelligent, efficient,
-            scalable, and trustworthy computing systems across Artificial
-            Intelligence, Computer Vision, Cloud Computing, Distributed
-            Systems, and Cybersecurity.
-          </p>
+          <div
+            aria-hidden="true"
+            className="mx-auto mt-5 h-1 w-16 rounded-full bg-blue-500"
+          />
 
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
+            My research explores intelligent, efficient, scalable, and
+            trustworthy computing systems, with a focus on Edge AI,
+            Computer Vision, and secure cloud and distributed systems.
+          </p>
         </div>
 
-        {/* Research Cards */}
+        {/* ====================================================
+            RESEARCH INTERESTS
+            ==================================================== */}
 
-        <div className="flex flex-wrap justify-center gap-8">
-
+        <div
+          className={`grid gap-6 ${
+            research.interests.length === 1
+              ? "mx-auto max-w-md"
+              : research.interests.length === 2
+                ? "mx-auto max-w-4xl md:grid-cols-2"
+                : "mx-auto max-w-6xl md:grid-cols-2 lg:grid-cols-3"
+          }`}
+        >
           {research.interests.map((item) => {
-
-            const Icon = icons[item.icon];
+            const Icon = iconMap[item.icon];
 
             return (
-
-              <div
+              <article
                 key={item.title}
-                className="group w-full max-w-[370px] rounded-3xl border border-[#1E40AF]/20 bg-gradient-to-br from-slate-900 to-[#111827] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#2563EB] hover:shadow-[0_0_35px_rgba(37,99,235,0.25)]"
+                className="group flex h-full flex-col rounded-2xl border border-slate-800/80 bg-slate-900/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/60 hover:bg-slate-900 hover:shadow-xl hover:shadow-blue-500/10 sm:p-7"
               >
-
-                <div className="mb-6 inline-flex rounded-2xl bg-[#1E40AF]/15 p-4">
-
+                {/* Icon */}
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/10 bg-blue-500/10 transition-all duration-300 group-hover:border-blue-500/30 group-hover:bg-blue-500/15">
                   {Icon && (
                     <Icon
-                      size={30}
-                      className="text-blue-400"
+                      size={24}
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                      className="text-blue-400 transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-300"
                     />
                   )}
-
                 </div>
 
-                <h3 className="mb-4 text-2xl font-semibold text-white transition group-hover:text-blue-400">
+                {/* Title */}
+                <h3 className="text-xl font-semibold leading-snug text-white transition-colors duration-300 group-hover:text-blue-400">
                   {item.title}
                 </h3>
 
-                <p className="leading-8 text-slate-400">
+                {/* Description */}
+                <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-[15px]">
                   {item.description}
                 </p>
-
-              </div>
-
+              </article>
             );
           })}
-
         </div>
 
-        {/* Current Research Focus */}
+        {/* ====================================================
+            CURRENT RESEARCH FOCUS
+            ==================================================== */}
 
-        <div className="mt-24">
+        {research.currentFocus?.length > 0 && (
+          <div className="mx-auto mt-16 max-w-5xl border-t border-slate-800/80 pt-10">
+            <div className="text-center">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+                Current Focus
+              </span>
 
-          <div className="mb-8">
+              <div className="mt-6 grid gap-4 text-left sm:grid-cols-2">
+                {research.currentFocus.map((focus, index) => (
+                  <div
+                    key={`${index}-${focus.slice(0, 30)}`}
+                    className="rounded-xl border border-slate-800/70 bg-slate-900/40 px-5 py-4"
+                  >
+                    <div className="flex gap-3">
+                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-xs font-semibold text-blue-400">
+                        {index + 1}
+                      </span>
 
-            <span className="text-sm font-semibold uppercase tracking-wider text-blue-400">
-              Current Focus
-            </span>
-
-            <h3 className="mt-2 text-3xl font-bold text-white">
-              Current Research Focus
-            </h3>
-
-          </div>
-
-          <div className="space-y-5">
-
-            {research.currentFocus.map((focus) => (
-
-              <div
-                key={focus}
-                className="flex items-start gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition hover:border-blue-500"
-              >
-
-                <ArrowRight
-                  size={22}
-                  className="mt-1 shrink-0 text-blue-400"
-                />
-
-                <p className="leading-8 text-slate-300">
-                  {focus}
-                </p>
-
+                      <p className="text-sm leading-7 text-slate-400">
+                        {focus}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-            ))}
-
+            </div>
           </div>
-
-        </div>
-
-        {/* Favorite Subjects */}
-        {/* 
-        <div className="mt-24">
-
-          <div className="mb-8">
-
-            <span className="text-sm font-semibold uppercase tracking-wider text-blue-400">
-              Academic Interests
-            </span>
-
-            <h3 className="mt-2 text-3xl font-bold text-white">
-              Favorite Subjects
-            </h3>
-
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-
-            {research.favoriteSubjects.map((subject) => (
-
-              <div
-                key={subject.name}
-                className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-[#111827] p-5 transition-all duration-300 hover:border-blue-500"
-              >
-
-                <h4 className="mb-3 text-xl font-semibold text-white">
-                  {subject.name}
-                </h4>
-
-                <p className="leading-8 text-slate-400">
-                  {subject.description}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div> */}
-
+        )}
       </div>
     </section>
   );
