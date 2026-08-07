@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Research from "./components/Research";
 import Projects from "./components/Projects";
-import TechStacks from "./components/TechStacks";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Education from "./components/Education";
@@ -28,7 +27,6 @@ export default function Home() {
         <Publications />
         <Skills />
         <Certifications />
-        <TechStacks />
         <Contact />
       </main>
 
